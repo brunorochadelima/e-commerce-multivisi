@@ -1,0 +1,47 @@
+@import "base";
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: $dark600;
+
+  &__social-icons {
+    padding: 0.5rem 0;
+    a {
+      margin-inline: 0.2rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  &__abas {
+    ul {
+      padding: 0;
+    }
+    ul li {
+      list-style: none;
+      line-height: 150%;
+    }
+    a {
+      color: $dark600;
+      &:hover {
+        color: $bluePrimary;
+      }
+    }
+  }
+
+  .fale-conosco ul h2 {
+    margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__abas:first-child {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}

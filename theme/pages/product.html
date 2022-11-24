@@ -1,189 +1,196 @@
 {# {{tray.scripts}} #}
 
-<div class="container product_container">
-  {# Slider fotos e vídeo do produto #}
-  <div>
-    <div class="swiper productSlider">
-      <div class="swiper-wrapper">
-        {% for image in product.images %}
-        <div class="swiper-slide">
-          {% set lazyIndex = loop.index == 1 ? false : true %}
-          <img
-            class="swiper-lazy"
-            data-src="{{ image.full }}"
-            alt="{{ product.name }}"
-            width="700"
-            height="700"
-            loading="{{ lazyIndex ? 'lazy' : 'eager' }}"
-          />
-          <div class="swiper-lazy-preloader"></div>
-        </div>
-        {% endfor %}
+<section class="container">
+  <div class="product_container">
+    {# Slider fotos e vídeo do produto #}
+    <div>
+      <div class="swiper productSlider">
+        <div class="swiper-wrapper">
+          {% for image in product.images %}
+          <div class="swiper-slide">
+            {% set lazyIndex = loop.index == 1 ? false : true %}
+            <img
+              class="swiper-lazy"
+              data-src="{{ image.full }}"
+              alt="{{ product.name }}"
+              width="700"
+              height="700"
+              loading="{{ lazyIndex ? 'lazy' : 'eager' }}"
+            />
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+          {% endfor %}
 
-        <div class="swiper-slide">
-          <iframe
-            class="swiper-lazy"
-            data-src="{{ product.video }}"
-            frameborder="0"
-            width="100%"
-            height="500"
-            allowfullscreen
-          ></iframe>
+          <div class="swiper-slide">
+            <iframe
+              class="swiper-lazy"
+              data-src="{{ product.video }}"
+              frameborder="0"
+              width="100%"
+              height="500"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <div thumbsSlider="" class="swiper thumbsSlider">
+        <div class="swiper-wrapper">
+          {% for image in product.images %}
+          <div class="swiper-slide">
+            <img
+              src="{{ image.medium }}"
+              alt="{{ product.name }}"
+              width="90"
+              height="90"
+            />
+          </div>
+          {% endfor %}
+
+          <div class="swiper-slide">
+            <i class="bi bi-play-fill" style="font-size: 4rem; color: #f00"></i>
+          </div>
         </div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
     </div>
 
-    <div thumbsSlider="" class="swiper thumbsSlider">
-      <div class="swiper-wrapper">
-        {% for image in product.images %}
-        <div class="swiper-slide">
-          <img
-            src="{{ image.medium }}"
-            alt="{{ product.name }}"
-            width="90"
-            height="90"
-          />
-        </div>
-        {% endfor %}
+    {# Info de compra do produto #}
+    <div class="product">
+      <h1 class="product__name">{{ product.name }}</h1>
+      {% element 'snippets/star_ranking' { review: product.ranking } %}
 
-        <div class="swiper-slide">
-          <i class="bi bi-play-fill" style="font-size: 4rem; color: #f00"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {# Info de compra do produto #}
-  <div class="product">
-    <h1 class="product__name">{{ product.name }}</h1>
-    {% element 'snippets/star_ranking' { review: product.ranking } %}
-
-    <p class="product__brand">
-      {{ "Marca: " ~ product.brand ~ " - Cod: " ~ product.id ~ " | "}}
-      <span data-availability="{{ product.availability }}"
-        >{{ product.availability }}</span>
-    </p>
-
-    {% if product.price_offer > 0 %}
-    <s>R$ {{ product.product_price|currency }}</s>
-    {% endif %}
-
-    <p class="product__price">
-      R$ {{ product.minimum_price|currency }} <br />
-      <span>à vista no boleto, transferência bancária ou PIX</span>
-    </p>
-
-    <p>
-      <b>R$ {{ product.calculated_price|currency }}</b> em {{
-      product.payment_option_details[2].plots }}x
-      <b>R$ {{ product.payment_option_details[2].value|currency }}</b> sem juros
-      no cartão de crédito
-    </p>
-
-    <form action="{{ links.cart_add ~ product.id }}" method="POST">
-      {% if product.variants %}
-      <input type="hidden" id="variant" name="variacao" value="" />
-      <p class="product__variant_title">
-        {{ product.variants[0].Sku[0].type }}
+      <p class="product__brand">
+        {{ "Marca: " ~ product.brand ~ " - Cod: " ~ product.id ~ " | "}}
+        <span data-availability="{{ product.availability }}"
+          >{{ product.availability }}</span
+        >
       </p>
 
-      {% for variant in product.variants %} {% if variant.stock > 0 %}
-      <div
-        data-variant="{{ variant.id }}"
-        onclick="capturarVariante(this)"
-        class="product__variant_options"
-      >
-        <p>{{ variant.Sku[0].value }}</p>
-      </div>
-      {% endif %} {% endfor %} {% endif %}
+      {% if product.price_offer > 0 %}
+      <s>R$ {{ product.product_price|currency }}</s>
+      {% endif %}
 
-      <div>
-        <div>
-          <label class="product_qtd">
-            <b>Quantidade</b>
-            <input
-              type="text"
-              name="quant"
-              value="1"
-              maxlength="3"
-              style="width: 80px"
-            />
-          </label>
+      <p class="product__price">
+        R$ {{ product.minimum_price|currency }} <br />
+        <span>à vista no boleto, transferência bancária ou PIX</span>
+      </p>
+
+      <p>
+        <b>R$ {{ product.calculated_price|currency }}</b> em {{
+        product.payment_option_details[2].plots }}x
+        <b>R$ {{ product.payment_option_details[2].value|currency }}</b> sem
+        juros no cartão de crédito
+      </p>
+
+      <form action="{{ links.cart_add ~ product.id }}" method="POST">
+        {% if product.variants %}
+        <input type="hidden" id="variant" name="variacao" value="" />
+        <p class="product__variant_title">
+          {{ product.variants[0].Sku[0].type }}
+        </p>
+
+        {% for variant in product.variants %} {% if variant.stock > 0 %}
+        <div
+          data-variant="{{ variant.id }}"
+          onclick="capturarVariante(this)"
+          class="product__variant_options"
+        >
+          <p>{{ variant.Sku[0].value }}</p>
         </div>
+        {% endif %} {% endfor %} {% endif %}
 
         <div>
-          <button
-            class="product__buy"
-            type="submit"
-            value="Comprar agora"
-            onclick="return validaSeSelecionouVariante()"
-          >
-            <i class="bi bi-cart2" style="font-size: 1.5rem"></i> Comprar agora
-          </button>
-        </div>
-      </div>
-    </form>
+          <div>
+            <label class="product_qtd">
+              <b>Quantidade</b>
+              <input
+                type="text"
+                name="quant"
+                value="1"
+                maxlength="3"
+                style="width: 80px"
+              />
+            </label>
+          </div>
 
-    {% if product.warranty %}
-    <p>
-      <i
-        class="bi bi-patch-check"
-        style="font-size: 1.5rem; font-weight: bold"
-      ></i>
-      Garantia de {{ product.warranty }}
-    </p>
-    {% endif %} {% if productHelper.shipping() %}
-    <div class="pageProduct-shipping">
-      {#
-      <span class="serverTray-content">{{ productHelper.shipping() }}</span> #}
-      <p class="shipping-text">Consultar prazo e valor do frete</p>
-      <form class="shipping-form" data-shipping="form">
-        <label for="cep" class="shipping-label">CEP</label>
-        <input
-          class="shipping-input mask-cep"
-          id="cep"
-          name="calcule o frete"
-          type="text"
-          minlength="9"
-          maxlength="9"
-          placeholder="Informe seu CEP"
-          required
-        />
-        <button type="submit" class="shipping-submit button2">OK</button>
+          <div>
+            <button
+              class="product__buy"
+              type="submit"
+              value="Comprar agora"
+              onclick="return validaSeSelecionouVariante()"
+            >
+              <i class="bi bi-cart2" style="font-size: 1.5rem"></i> Comprar
+              agora
+            </button>
+          </div>
+        </div>
       </form>
-      <div class="shipping-result loaded" data-shipping="result">
-        <p class="shipping-loading">Carregando fretes...</p>
+
+      {% if product.warranty %}
+      <p>
+        <i
+          class="bi bi-patch-check"
+          style="font-size: 1.5rem; font-weight: bold"
+        ></i>
+        Garantia de {{ product.warranty }}
+      </p>
+      {% endif %} {% if productHelper.shipping() %}
+      <div class="pageProduct-shipping">
+        {#
+        <span class="serverTray-content">{{ productHelper.shipping() }}</span>
+        #}
+        <p class="shipping-text">Consultar prazo e valor do frete</p>
+        <form class="shipping-form" data-shipping="form">
+          <label for="cep" class="shipping-label">CEP</label>
+          <input
+            class="shipping-input mask-cep"
+            id="cep"
+            name="calcule o frete"
+            type="text"
+            minlength="9"
+            maxlength="9"
+            placeholder="Informe seu CEP"
+            required
+          />
+          <button type="submit" class="shipping-submit button2">OK</button>
+        </form>
+        <div class="shipping-result loaded" data-shipping="result">
+          <p class="shipping-loading">Carregando fretes...</p>
+        </div>
       </div>
+      {% endif %} {#
+      <a href="{{ links.cart_add ~ product.id }}">Adionar ao carrinho</a> #}
     </div>
-    {% endif %} {#
-    <a href="{{ links.cart_add ~ product.id }}">Adionar ao carrinho</a> #}
   </div>
-</div>
+</section>
 
 {# Descrição #}
-<div class="container">
+<section class="container">
   <div class="product_description">
     <p class="product_description__title">
       <i class="bi bi-card-list"></i> Descrição do produto
     </p>
     {{ product.description }}
   </div>
-</div>
+</section>
 
 {# Produtos Similares #}
-<div class="container related_products">
-  <h2 class="related_products__title">
-    <i class="bi bi-bag"></i> Produtos Similares
-  </h2>
-  <div class="related_products__container">
-    {% for item in product.related_products %} {% element 'snippets/product' {
-    product: item } %} {% endfor %}
+<section class="related_products">
+  <div class="container">
+    <h2 class="related_products__title">
+      <i class="bi bi-bag"></i> Produtos Similares
+    </h2>
+    <div class="related_products__container">
+      {% for item in product.related_products %} {% element 'snippets/product' {
+      product: item } %} {% endfor %}
+    </div>
   </div>
-</div>
+</section>
 
-{% element 'CustomerReview.reviews' %} {#
+{#
 <pre>
   {{ dump(product.variants) }}
 </pre>
