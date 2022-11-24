@@ -5,6 +5,10 @@ header {
   padding-top: 1.2rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -34,10 +38,6 @@ header {
       border-radius: 16px;
       padding: 2rem;
       top: 50px;
-
-      a {
-        text-decoration: none;
-      }
 
       .btn-login {
         background: $bluePrimary;
@@ -87,6 +87,9 @@ header {
 nav {
   background: $blueSecondary;
   color: $bluePrimary;
+  a {
+    color: $bluePrimary;
+  }
 }
 
 .navbar {
@@ -107,7 +110,7 @@ nav {
     }
 
     li:hover {
-      background: #00E5FF;
+      background: #00e5ff;
       border-radius: 5px;
       cursor: pointer;
     }
