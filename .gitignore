@@ -1,1 +1,30 @@
-./theme/*.debug.sdk.log
+# Folders
+node_modules/
+dist/
+
+# Files
+*.log
+config.yml
+
+# IDEs configurations
+.idea/
+.vscode/
+.atom/
+
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Applications
+*.app
+*.exe
+*.war
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
