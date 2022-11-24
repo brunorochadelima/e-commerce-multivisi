@@ -1,0 +1,19 @@
+<a class="card-product" href="{{product.link}}">
+  {# Tag com valor desconto #}
+  {% if product.price_offer > 0 %}
+  <span class="card-product__tag-desconto">- {{((product.price - product.payment_option_details[0].value) /
+    product.price * 100)|number_format}}%</span>
+  {% endif %}
+
+  <img src="{{product.images[0]['large']}}" alt="{{product.name}}" width="180" height="180">
+  {% element 'snippets/star_ranking' { 'review': product.ranking } %}
+  <p class="card-product__name">{{product.name|slice(0, 45)}}...</p>
+
+  {# Se tiver preço promocional exibe o valor tachado #}
+  {% if product.price_offer > 0 %}
+  <s>R$ {{product.product_price | currency}}</s>
+  {% endif %}
+
+  <p class="card-product__price">R$ {{ product.minimum_price | currency }} </p>
+  <p class="card-product__payment_option">à vista ou em até 12x de R$ {{product.payment_option_details[2].value | currency}}</p>
+</a>

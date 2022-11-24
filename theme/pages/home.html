@@ -1,0 +1,57 @@
+{# {{ tray.scripts }} #}
+<section class="banner">{% element 'snippets/banner-home' %}</section>
+
+<section class="container">{% element 'snippets/categories-bar' %}</section>
+
+<section class="container">
+  {% set destaques = Products({ 'filter': 'featured', 'limit': 4, 'order':
+  {'quantity_sold': 'desc'}, }) %} {% element 'snippets/product-list'
+  {'products': destaques, 'titleCategory': 'Os mais queridos', 'link' :
+  links.search_featured } %}
+</section>
+
+<section class="container">
+  {% set novidades = Products({ 'filter': 'new', 'limit': 4, 'order':
+  {'quantity_sold': 'desc'}, }) %} {% element 'snippets/product-list'
+  {'products': novidades, 'titleCategory': 'Acabaram de chegar', 'link' :
+  links.search_order_new} %}
+</section>
+
+{# Banners #}
+<section class="container">
+  <div class="banners-home">
+    <a href="#">
+      <img
+        src="{{ asset('img/settings/banner-multivisi-1.png') }}"
+        alt=""
+        loading="lazy"
+      />
+    </a>
+    <a href="#">
+      <img
+        src="{{ asset('img/settings/banner-multivisi-2.png') }}"
+        alt=""
+        loading="lazy"
+      />
+    </a>
+    <a href="#">
+      <img
+        src="{{ asset('img/settings/banner-multivisi-3.png') }}"
+        alt=""
+        loading="lazy"
+      />
+    </a>
+  </div>
+</section>
+
+<section class="container">
+  {% set promocoes = Products({ 'filter': 'promotion', 'limit': 4, 'order':
+  {'quantity_sold': 'desc'}, }) %} {% element 'snippets/product-list'
+  {'products': promocoes, 'titleCategory': 'Multi Ofertas', 'link' :
+  links.search_offer} %}
+</section>
+
+{# Formulário Rd Station #}
+<section class="form-rd-station">{% element 'snippets/get-lead' %}</section>
+
+{{ seals.ebit }} {{ seals.hackersafe }}

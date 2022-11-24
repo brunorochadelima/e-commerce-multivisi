@@ -1,0 +1,18 @@
+<ul class="menu_categories">
+  {% for categoria in categories %}
+  <li>
+    <a class="menu_categories__category_name" href="{{ categoria.link }}"
+      >{{ categoria.name }}</a
+    >
+    {% if categoria.children %}
+    <ul class="menu-children">
+      {% for child in categoria.children %}
+      <li>
+        <a href="{{ child.link }}">{{ child.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

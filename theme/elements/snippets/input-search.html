@@ -1,0 +1,21 @@
+<form
+  action="{{ links.search }}"
+  method="GET"
+  data-search="suggestion"
+  class="search header-search"
+>
+  <input type="hidden" name="loja" value="{{ store.id }}" />
+  <input
+    class="search__input"
+    data-input="suggestion"
+    type="text"
+    placeholder="O que deseja procurar?"
+    name="palavra_busca"
+  />
+  <button title="Buscar" aria-label="Buscar" class="search__button">
+    <span aria-hidden="true"
+      ><i class="bi bi-search" style="color: #003ce5; font-size: 1.2rem"></i
+    ></span>
+  </button>
+  {# <div class="search-suggestion is-hidden" data-container="suggestion"></div> #}
+</form>

@@ -1,0 +1,125 @@
+@import "base", "./elements/input-search", "./elements/menu-categories";
+
+header {
+  background: $bluePrimary;
+  padding-top: 1.2rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 1.2rem;
+
+  &__logo {
+    width: 400px;
+  }
+
+  &__container-login {
+    position: relative;
+  }
+
+  &__login {
+    display: inline-flex;
+    gap: 0.5rem;
+    min-width: 250px;
+    padding: 0.5rem;
+    color: #fff;
+
+    &__modal {
+      display: none;
+      position: absolute;
+      z-index: 999;
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      top: 50px;
+
+      a {
+        text-decoration: none;
+      }
+
+      .btn-login {
+        background: $bluePrimary;
+        color: #fff;
+        padding: 1rem;
+        display: block;
+        border-radius: 8px;
+        width: 200px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .btn-register {
+        color: $bluePrimary;
+        border: 2px solid $bluePrimary;
+        padding: 1rem;
+        display: block;
+        border-radius: 8px;
+        width: 200px;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+
+    &:hover + &__modal,
+    &__modal:hover {
+      display: block;
+    }
+  }
+
+  &__cart {
+    position: relative;
+
+    span {
+      position: absolute;
+      right: -6px;
+      background: $blueSecondary;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      text-align: center;
+    }
+  }
+}
+
+nav {
+  background: $blueSecondary;
+  color: $bluePrimary;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul.categories_destaques {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    list-style: none;
+
+    li {
+      padding: 1rem;
+      font-weight: bold;
+    }
+
+    li:hover {
+      background: #00E5FF;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .open_menu_categories {
+    padding: 1rem;
+  }
+
+  .open_menu_categories:hover + .menu_categories,
+  .menu_categories:hover {
+    visibility: visible;
+    opacity: 100%;
+  }
+}

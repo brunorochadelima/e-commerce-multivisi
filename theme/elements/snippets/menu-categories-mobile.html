@@ -1,0 +1,18 @@
+<div class="menu_categories_mobile">
+  <div>
+    {% for categoria in categories %}
+    <details>
+      <summary>{{ categoria.name }}</summary>
+      {% if categoria.children %}
+      <div class="menu-children">
+        {% for child in categoria.children %}
+        <div>
+          <a href="{{ child.link }}">{{ child.name }}</a>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </details>
+    {% endfor %}
+  </div>
+</div>

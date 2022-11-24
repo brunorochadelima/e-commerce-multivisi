@@ -1,0 +1,93 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}"
+  data-theme-name="Tema Padrão" data-theme-version="11.0.1">
+
+<head>
+  <!-- tray charset -->
+  {{ html.charset() }}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- tray meta tags -->
+  {{ tray.meta }}
+
+  <!-- tray styles -->
+  {{ tray.styles }}
+
+  <!-- theme styles -->
+  {# Reset #}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  {# Fontes #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+ {% if utils.is_mobile %}
+  <link rel="stylesheet" href="{{ asset('css/header-mobile.css')}}">
+ {% else %}
+  <link rel="stylesheet" href="{{ asset('css/header.css')}}">  
+ {% endif %}  
+ 
+  {# <link rel="stylesheet" href="{{ asset('css/base.css') }}" <link rel="stylesheet"
+    href="{{ asset('css/theme.min.css') }}" type="text/css" /> #}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" type="text/css" />
+
+
+  {% if pages.current == 'home' %}
+  <link rel="stylesheet" href="{{ asset('css/home.css') }}" type="text/css" />
+  {% endif %}
+  
+  {% if pages.current in ['search', 'catalog']  %}
+  <link rel="stylesheet" href="{{ asset('css/search.css') }}" type="text/css" />
+  {% endif %}
+
+  {% if pages.current == 'product' %}
+  <link rel="stylesheet" href="{{ asset('css/product.css') }}" type="text/css" >
+  {% endif %}
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+  <!-- tray analytics -->
+  {{ tray.analytics }}
+
+  <!-- google tag manager -->
+  {{ googleTagManager.header(pages.current, tagManagerData) }}
+</head>
+
+
+<body>
+  {% element 'snippets/messages' %}
+  {% element 'header' %}
+  {{ googleTagManager.top(pages.current, tagManagerData) }}
+
+  {{ content_for_layout }}
+
+  <!-- default tray -->
+  {% element 'snippets/pageview' %}
+  {% element 'snippets/modal' %}
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="{{ asset('js/swiper.js')}}"></script>
+
+  <!-- Rd Station -->
+  <script type="text/javascript"
+    src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/7afc2a8f-0433-42f5-b6a4-0ff4a44cc6a1-loader.js"
+    defer></script>
+
+  <!-- Página produto -->
+  {% if pages.current == 'product' %}
+  <script src="{{ asset('js/product.js')}}"></script>
+  {% endif %}
+
+  {% if utils.is_mobile %}
+    <script async src="{{ asset('js/modules/menu-mobile.js')}}" ></script>
+  {% endif %}
+
+  {{tray.scripts}} 
+</body>
+
+</html>
+{% endspaceless %}

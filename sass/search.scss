@@ -1,0 +1,31 @@
+@import "base";
+@import "./elements/card-product";
+@import "./elements/star-ranking";
+@import "./elements/pagination";
+
+.grid-card-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.search-word {
+  font-size: 1.5rem;
+  color: $dark900;
+}
+
+.filter-order {
+  margin: 1rem 0;
+
+  &__order_options {
+    font-size: 1rem;
+    color: $dark900;
+    margin: 0.5rem 0;
+  }
+
+  select {
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+}

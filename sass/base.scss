@@ -1,0 +1,36 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Declarar que as imagens nunca devem ser renderizadas em um tamanho maior do que o elemento que as contém
+img {
+  max-inline-size: 100%;
+  height: auto;
+};
+
+$bgColor: #F1F2F6;
+$bluePrimary: #003CE5;
+$blueSecondary: #00FFFF;
+$dark600: #416788;
+$dark900: #2C3E50;
+$green: #95C11F;
+
+body {
+  background-color: $bgColor;
+  font-family: "Montserrat", sans-serif;
+}
+
+// Reset estilos padrões Tray
+p {
+  border-bottom: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 .5rem;
+  background: none;
+}

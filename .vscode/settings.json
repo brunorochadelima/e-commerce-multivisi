@@ -1,0 +1,22 @@
+{
+  "livePreview.defaultPreviewPath": "c:\\Users\\bruno.rocha\\Documents\\Sites Multivisi\\novo-site-multivisi\\pages\\home.html",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "files.associations": {
+    "*.html": "twig",
+    "*.tpl": "twig"
+  },
+  "emmet.includeLanguages": {
+    "twig": "html"
+  },
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".css",
+      "savePath": "/theme/css"
+    }
+  ]
+}

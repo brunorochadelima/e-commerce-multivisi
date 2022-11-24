@@ -1,0 +1,197 @@
+@import "base";
+@import "./elements/card-product";
+
+// Slider
+.swiper-slide {
+  max-width: 700px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.productSlider {
+  max-width: 700px;
+}
+
+.thumbsSlider {
+  max-width: 680px;
+  margin-top: 0.3rem;
+}
+
+.product_container {
+  display: flex;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-top: 1.5rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+// estrelas
+
+.ranking {
+  display: flex;
+  border-bottom: none;
+}
+
+.ranking .icon {
+  margin: 0 2px;
+}
+
+// variação de produto
+
+.product {
+  color: $dark900;
+  padding: 0.8rem;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+
+  &__name {
+    font-size: 2rem;
+  }
+
+  [data-availability="Imediata"],
+  [data-availability="PRONTA ENTREGA"] {
+    color: $green;
+    font-weight: bold;
+  }
+
+  s {
+    padding: 5px;
+  }
+
+  &__price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $bluePrimary;
+    line-height: 90%;
+    margin: 0.3rem 0;
+
+    span {
+      font-size: 1.125rem;
+      color: $dark900;
+      font-weight: normal;
+    }
+  }
+
+  &__variant_title {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  &__variant_options {
+    border: 1px solid $dark600;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+
+    p {
+      margin: 0.2rem;
+    }
+  }
+
+  &__variant_options--selected {
+    background-color: $dark600;
+    color: #ffffff;
+  }
+
+  &_qtd {
+    input {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid $dark600;
+    }
+  }
+
+  .bi {
+    display: inline-block;
+    font-family: "bootstrap-icons";
+    font-size: inherit;
+    text-rendering: auto;
+  }
+
+  &__buy {
+    width: 300px;
+    background-color: $bluePrimary;
+    color: #fff;
+    border: none;
+    padding: 1.3rem;
+    border-radius: 12px;
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+
+.product_description {
+  span {
+    font-family: "Montserrat", sans-serif !important;
+  }
+  font-family: "Montserrat", sans-serif !important;
+
+  color: $dark900;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem .5rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $bluePrimary;
+    text-transform: uppercase;
+  }
+
+  // Tabelas ficha ténica
+  table tbody tr > td {
+    padding: 0.5rem;
+    width: 50vh;
+  }
+
+  /* linhas pares (even) */
+  table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+  /* linhas ímpares (odd) */
+  table tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+}
+
+.related_products {
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $bluePrimary;
+    margin: 1rem 0;
+  }
+
+  &__container{
+
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    overflow: auto;
+  }
+ 
+}

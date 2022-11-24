@@ -1,0 +1,109 @@
+@import "base";
+@import "./elements/input-search";
+@import "./elements/menu-categories-mobile";
+
+.header-mobile {
+  background: $bluePrimary;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+
+  &__logo {
+    max-width: 200px;
+  }
+
+  &__cart {
+    position: relative;
+
+    span {
+      position: absolute;
+      right: -10px;
+      bottom: 15px;
+      background: $blueSecondary;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      text-align: center;
+    }
+  }
+
+  &__input-search {
+    background-color: $bluePrimary;
+    padding: 0 0.5rem 0.8rem;
+  }
+}
+
+.header-mobile-drawer {
+  padding: 0 0.5rem;
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  z-index: 99;
+  visibility: hidden;
+  overflow-x: hidden;
+  transition: 0.1s ease-in;
+  background: #f1f1f1;
+  color: $dark900;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  
+  a {
+    text-decoration: none;
+  }
+
+  .btncloseDrawer {
+    width: 100%;
+    padding: 1rem;
+    height: 50px;
+    font-size: 1.8rem;
+    text-align: right;
+  }
+
+  .title-login {
+    font-size: 1.5rem;
+  }
+
+  .container-btns {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+
+    .btn-login {
+      display: inline-block;
+      background: $bluePrimary;
+      color: #fff;
+      padding: 1rem;
+      display: block;
+      border-radius: 8px;
+      flex-grow: 1;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .btn-register {
+      display: inline-block;
+      color: $bluePrimary;
+      border: 2px solid $bluePrimary;
+      padding: 1rem;
+      display: block;
+      border-radius: 8px;
+      flex-grow: 1;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .title-categories {
+    font-size: 1.5rem;
+  }
+}
+
+.active {
+  width: 100%;
+  visibility: visible;
+  overflow-x: auto;
+  overflow-y: auto;
+}

@@ -1,0 +1,26 @@
+<h1>Página Catálogo</h1>
+
+<div class="container">
+  <form name="form-filter" method="get" data-form="filter" class="filter-order">
+    <input type="hidden" name="loja" value="{{ store.id }}" />
+
+    {% if search.word %}
+    <input name="palavra_busca" type="hidden" value="{{ search.word }}" />
+    {% endif %} {% if search.order_options %}
+    <h3 class="filter-order__order_options">Ordenar por:</h3>
+    <select name="order" onchange="this.form.submit()">
+      {% for option in search.order_options %}
+      <option value="{{ option.value }}">{{ option.name }}</option>
+      {% endfor %}
+    </select>
+    {% endif %}
+  </form>
+</div>
+
+{% if products|length > 0 %}
+<div class="container grid-card-products">
+  {% for product in products %}
+  <div>{% element 'snippets/product' {"product": product} %}</div>
+  {% endfor %}
+</div>
+{% endif %} {% element ('snippets/pagination') %}
