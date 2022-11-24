@@ -1,11 +1,20 @@
 @import "base";
 
+footer {
+  background: #e2e8f0;
+}
+
 .footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.5rem;
+  padding-top: 1.8rem;
   color: $dark600;
+
+  a {
+    text-decoration: none;
+  }
 
   &__social-icons {
     padding: 0.5rem 0;
