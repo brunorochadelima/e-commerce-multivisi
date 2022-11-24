@@ -39,8 +39,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .categories-bar ~ .swiper-button-next,
-  .categories-bar ~ .swiper-button-prev {
+  .categories-bar > .swiper-button-next,
+  .categories-bar > .swiper-button-prev {
     visibility: hidden;
   }
 }
