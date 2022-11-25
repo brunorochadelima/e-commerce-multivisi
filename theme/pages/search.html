@@ -1,11 +1,12 @@
-<h1>Página search</h1>
 {# <pre>
   {{ dump(search) }}
 </pre> #}
+{% element 'snippets/breadcrumb' %}
 
 <div class="container">
 
   {% if search.word %}
+  <br>
   <h5 class="search-word">Resultados para a busca: <strong> "{{ search.word }}"</strong></h5>
   {% endif %}
 

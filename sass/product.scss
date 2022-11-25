@@ -1,5 +1,5 @@
 @import "base";
-@import "./elements/card-product";
+@import "./elements/card-product", "./elements/breadcrumb";
 
 // Slider
 .swiper-slide {
@@ -30,9 +30,8 @@
 
 .product_container {
   display: flex;
-  background: #ffffff !important;
+  background: #ffffff;
   border-radius: 15px;
-  margin-top: 1.5rem !important;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;

@@ -1,0 +1,20 @@
+.breadcrumb { 
+  padding: 1rem 0;
+
+  &__item {
+    color: #416788;
+  }
+
+  &__icon {
+    color: #416788;
+  }
+
+  a {
+    color: #416788;
+    text-decoration: none;
+
+    &:hover {
+      color: #003ce5;
+    }
+  }
+}

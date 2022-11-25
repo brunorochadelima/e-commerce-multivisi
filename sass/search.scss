@@ -1,7 +1,5 @@
-@import "base";
-@import "./elements/card-product";
-@import "./elements/star-ranking";
-@import "./elements/pagination";
+@import "base", "./elements/card-product", "./elements/star-ranking",
+  "./elements/pagination", "./elements/breadcrumb";
 
 .grid-card-products {
   display: flex;
