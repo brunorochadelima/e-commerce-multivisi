@@ -141,6 +141,10 @@
 
 .shipping-result {
   margin: 0.8rem 0;
+
+  table tbody tr td {
+    font-size: 15px;
+  }
 }
 
 input.shipping-input {
