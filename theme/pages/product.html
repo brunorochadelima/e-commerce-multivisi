@@ -106,6 +106,7 @@
             <label class="product_qtd">
               <b>Quantidade</b>
               <input
+                id="quant"
                 type="text"
                 name="quant"
                 value="1"
@@ -137,32 +138,30 @@
         ></i>
         Garantia de {{ product.warranty }}
       </p>
-      {% endif %} {% if productHelper.shipping() %}
-      <div class="pageProduct-shipping">
-        {#
-        <span class="serverTray-content">{{ productHelper.shipping() }}</span>
-        #}
-        <p class="shipping-text">Consultar prazo e valor do frete</p>
-        <form class="shipping-form" data-shipping="form">
-          <label for="cep" class="shipping-label">CEP</label>
+      {% endif %} 
+      <hr>
+      {% if product.stock > 0 %}
+      <div id="product-shipping" data-productId="{{ product.id }}">
+        <p>Consultar prazo e valor do frete:</p>
+        <div>
+          <label for="cep" class="shipping-label">CEP </label>
           <input
-            class="shipping-input mask-cep"
+            class="shipping-input"
             id="cep"
             name="calcule o frete"
+            placeholder= "00000-000"
             type="text"
             minlength="9"
             maxlength="9"
             placeholder="Informe seu CEP"
             required
           />
-          <button type="submit" class="shipping-submit button2">OK</button>
-        </form>
-        <div class="shipping-result loaded" data-shipping="result">
-          <p class="shipping-loading">Carregando fretes...</p>
+          <button class="btn-calcular" onclick="calcularFrete()">Calcular</button>
         </div>
+        <div class="shipping-result"></div>
       </div>
-      {% endif %} {#
-      <a href="{{ links.cart_add ~ product.id }}">Adionar ao carrinho</a> #}
+      {% endif %}
+
     </div>
   </div>
 </section>

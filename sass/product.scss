@@ -137,6 +137,30 @@
   }
 }
 
+// Frete
+
+.shipping-result {
+  margin: 0.8rem 0;
+}
+
+input.shipping-input {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgb(153, 153, 153);
+  max-width: 150px;
+}
+
+.btn-calcular {
+  background-color: $dark600;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  margin-inline-start: 0.3rem;
+}
+
+// Descrição do produto
+
 .product_description {
   span {
     font-family: "Montserrat", sans-serif !important;
