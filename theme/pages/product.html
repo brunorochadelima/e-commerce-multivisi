@@ -138,8 +138,8 @@
         ></i>
         Garantia de {{ product.warranty }}
       </p>
-      {% endif %} 
-      <hr>
+      {% endif %}
+      <hr />
       {% if product.stock > 0 %}
       <div id="product-shipping" data-productId="{{ product.id }}">
         <p>Consultar prazo e valor do frete:</p>
@@ -149,19 +149,20 @@
             class="shipping-input"
             id="cep"
             name="calcule o frete"
-            placeholder= "00000-000"
+            placeholder="00000-000"
             type="text"
             minlength="9"
             maxlength="9"
             placeholder="Informe seu CEP"
             required
           />
-          <button class="btn-calcular" onclick="calcularFrete()">Calcular</button>
+          <button class="btn-calcular" onclick="calcularFrete()">
+            Calcular
+          </button>
         </div>
         <div class="shipping-result"></div>
       </div>
       {% endif %}
-
     </div>
   </div>
 </section>
@@ -186,6 +187,20 @@
       {% for item in product.related_products %} {% element 'snippets/product' {
       product: item } %} {% endfor %}
     </div>
+  </div>
+</section>
+
+{% element "snippets/product-reviews" %} 
+
+
+{% element 'snippets/history' %}
+
+<section class="pageProduct-lastSeen">
+  <h2 class="lastSeen-title">&Uacute;ltimos Vistos</h2>
+
+  <div class="lastSeen-list serverTray-content">
+    {% element 'snippets/history' { 'store.id' : store.id, 'pages.current' :
+    pages.current, 'category.id' : category.id } %}
   </div>
 </section>
 

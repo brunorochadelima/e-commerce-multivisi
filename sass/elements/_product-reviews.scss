@@ -1,0 +1,21 @@
+.yourviews {
+  
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $bluePrimary;
+    margin: 1.5rem 0;
+  }
+
+}
+
+.yv-bootstrap {
+  border-radius: 15px;
+  padding: 0.8rem;
+}
+
+.yv-btn-primary, .yv-btn-info {
+  background: $bluePrimary !important;
+  border-radius: 12px;
+}

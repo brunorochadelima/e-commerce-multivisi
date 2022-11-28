@@ -7,7 +7,7 @@
     {% if search.word %}
     <input name="palavra_busca" type="hidden" value="{{ search.word }}" />
     {% endif %} {% if search.order_options %}
-    <h3 class="filter-order__order_options">Ordenar por:</h3>
+    <h3 class="filter-order__order_options"><i class="bi bi-funnel"></i> Ordenar por:</h3>
     <select name="order" onchange="this.form.submit()">
       {% for option in search.order_options %}
       <option value="{{ option.value }}">{{ option.name }}</option>
