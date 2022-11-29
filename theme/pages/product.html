@@ -1,35 +1,22 @@
-{# {{tray.scripts}} #} {% element 'snippets/breadcrumb' %}
+{% element 'snippets/breadcrumb' %}
 
 <section class="container">
-  <div class="product_container">
+  <div
+    class="product_container">
     {# Slider fotos e vídeo do produto #}
     <div>
       <div class="swiper productSlider">
         <div class="swiper-wrapper">
           {% for image in product.images %}
-          <div class="swiper-slide">
-            {% set lazyIndex = loop.index == 1 ? false : true %}
-            <img
-              class="swiper-lazy"
-              data-src="{{ image.full }}"
-              alt="{{ product.name }}"
-              width="700"
-              height="700"
-              loading="{{ lazyIndex ? 'lazy' : 'eager' }}"
-            />
-            <div class="swiper-lazy-preloader"></div>
-          </div>
+            <div class="swiper-slide">
+              {% set lazyIndex = loop.index == 1 ? false : true %}
+              <img class="swiper-lazy" data-src="{{ image.full }}" alt="{{ product.name }}" width="700" height="700" loading="{{ lazyIndex ? 'lazy' : 'eager' }}"/>
+              <div class="swiper-lazy-preloader"></div>
+            </div>
           {% endfor %}
 
           <div class="swiper-slide">
-            <iframe
-              class="swiper-lazy"
-              data-src="{{ product.video }}"
-              frameborder="0"
-              width="100%"
-              height="500"
-              allowfullscreen
-            ></iframe>
+            <iframe class="swiper-lazy" data-src="{{ product.video }}" frameborder="0" width="100%" height="500" allowfullscreen></iframe>
           </div>
         </div>
         <div class="swiper-button-next"></div>
@@ -39,14 +26,9 @@
       <div thumbsSlider="" class="swiper thumbsSlider">
         <div class="swiper-wrapper">
           {% for image in product.images %}
-          <div class="swiper-slide">
-            <img
-              src="{{ image.medium }}"
-              alt="{{ product.name }}"
-              width="90"
-              height="90"
-            />
-          </div>
+            <div class="swiper-slide">
+              <img src="{{ image.medium }}" alt="{{ product.name }}" width="90" height="90"/>
+            </div>
           {% endfor %}
 
           <div class="swiper-slide">
@@ -62,108 +44,91 @@
       {% element 'snippets/star_ranking' { review: product.ranking } %}
 
       <p class="product__brand">
-        {{ "Marca: " ~ product.brand ~ " - Cod: " ~ product.id ~ " | "}}
-        <span data-availability="{{ product.availability }}"
-          >{{ product.availability }}</span
-        >
+        {{ "Marca: " ~ product.brand ~ " - Cod: " ~ product.id ~ " | " }}
+        <span data-availability="{{ product.availability }}">{{ product.availability }}</span>
       </p>
 
       {% if product.price_offer > 0 %}
-      <s>R$ {{ product.product_price|currency }}</s>
+        <s>R$
+          {{ product.product_price|currency }}</s>
       {% endif %}
 
       <p class="product__price">
-        R$ {{ product.minimum_price|currency }} <br />
+        R$
+        {{ product.minimum_price|currency }}
+        <br/>
         <span>à vista no boleto, transferência bancária ou PIX</span>
       </p>
 
       <p>
-        <b>R$ {{ product.calculated_price|currency }}</b> em {{
-        product.payment_option_details[2].plots }}x
-        <b>R$ {{ product.payment_option_details[2].value|currency }}</b> sem
-        juros no cartão de crédito
+        <b>R$
+          {{ product.calculated_price|currency }}</b>
+        em
+        {{ product.payment_option_details[2].plots }}x
+        <b>R$
+          {{ product.payment_option_details[2].value|currency }}</b> sem juros no cartão de crédito
       </p>
 
       <form action="{{ links.cart_add ~ product.id }}" method="POST">
         {% if product.variants %}
-        <input type="hidden" id="variant" name="variacao" value="" />
-        <p class="product__variant_title">
-          {{ product.variants[0].Sku[0].type }}
-        </p>
+          <input type="hidden" id="variant" name="variacao" value=""/>
+          <p class="product__variant_title">
+            {{ product.variants[0].Sku[0].type }}
+          </p>
 
-        {% for variant in product.variants %} {% if variant.stock > 0 %}
-        <div
-          data-variant="{{ variant.id }}"
-          onclick="capturarVariante(this)"
-          class="product__variant_options"
-        >
-          <p>{{ variant.Sku[0].value }}</p>
-        </div>
-        {% endif %} {% endfor %} {% endif %}
+          {% for variant in product.variants %}
+            {% if variant.stock > 0 %}
+              <div data-variant="{{ variant.id }}" onclick="capturarVariante(this)" class="product__variant_options">
+                <p>{{ variant.Sku[0].value }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
 
         <div>
           <div>
             <label class="product_qtd">
               <b>Quantidade</b>
-              <input
-                id="quant"
-                type="text"
-                name="quant"
-                value="1"
-                maxlength="3"
-                style="width: 80px"
-              />
+              <input id="quant" type="text" name="quant" value="1" maxlength="3" style="width: 80px"/>
             </label>
           </div>
 
           <div>
-            <button
-              class="product__buy"
-              type="submit"
-              value="Comprar agora"
-              onclick="return validaSeSelecionouVariante()"
-            >
-              <i class="bi bi-cart2" style="font-size: 1.5rem"></i> Comprar
-              agora
+            <button class="product__buy" type="submit" value="Comprar agora" onclick="return validaSeSelecionouVariante()">
+              <i class="bi bi-cart2" style="font-size: 1.5rem"></i>
+              Comprar
+                            agora
             </button>
           </div>
         </div>
       </form>
 
       {% if product.warranty %}
-      <p>
-        <i
-          class="bi bi-patch-check"
-          style="font-size: 1.5rem; font-weight: bold"
-        ></i>
-        Garantia de {{ product.warranty }}
-      </p>
+        <p>
+          <i class="bi bi-patch-check" style="font-size: 1.5rem; font-weight: bold"></i>
+          Garantia de
+          {{ product.warranty }}
+        </p>
       {% endif %}
-      <hr />
+      <hr/>
+
+      {# Frete #}
       {% if product.stock > 0 %}
-      <div id="product-shipping" data-productId="{{ product.id }}">
-        <p>Consultar prazo e valor do frete:</p>
-        <div>
-          <label for="cep" class="shipping-label">CEP </label>
-          <input
-            class="shipping-input"
-            id="cep"
-            name="calcule o frete"
-            placeholder="00000-000"
-            type="text"
-            minlength="9"
-            maxlength="9"
-            placeholder="Informe seu CEP"
-            required
-          />
-          <button class="btn-calcular" onclick="calcularFrete()">
-            Calcular
-          </button>
+        <div id="product-shipping" data-productId="{{ product.id }}">
+          <p>Consultar prazo e valor do frete:</p>
+          <div>
+            <label for="cep" class="shipping-label">CEP
+            </label>
+            <input class="shipping-input" id="cep" name="calcule o frete" placeholder="00000-000" type="text" minlength="9" maxlength="9" placeholder="Informe seu CEP" required/>
+            <button class="btn-calcular" onclick="calcularFrete()">
+              Calcular
+            </button>
+          </div>
+          <div class="shipping-result"></div>
         </div>
-        <div class="shipping-result"></div>
-      </div>
       {% endif %}
     </div>
+
   </div>
 </section>
 
@@ -171,7 +136,8 @@
 <section class="container">
   <div class="product_description">
     <p class="product_description__title">
-      <i class="bi bi-card-list"></i> Descrição do produto
+      <i class="bi bi-card-list"></i>
+      Descrição do produto
     </p>
     {{ product.description }}
   </div>
@@ -181,17 +147,19 @@
 <section class="related_products">
   <div class="container">
     <h2 class="related_products__title">
-      <i class="bi bi-bag"></i> Produtos Similares
+      <i class="bi bi-bag"></i>
+      Produtos Similares
     </h2>
     <div class="related_products__container">
-      {% for item in product.related_products %} {% element 'snippets/product' {
-      product: item } %} {% endfor %}
+      {% for item in product.related_products %}
+        {% element 'snippets/product' {
+      product: item } %}
+      {% endfor %}
     </div>
   </div>
 </section>
 
-{% element "snippets/product-reviews" %} 
-<a href="{{ links.contact }}">contato</a>
+{% element "snippets/product-reviews" %}
 
 {#
 <pre>

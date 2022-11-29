@@ -1,6 +1,7 @@
 var swiper = new Swiper(".banner-home", {
+  // preloadImages: false,
   // cssMode: true,
-  lazy: true,
+  lazy: true, 
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,

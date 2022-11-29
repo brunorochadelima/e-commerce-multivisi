@@ -1,11 +1,13 @@
 <p class="title-categories">{{ titleCategory }}
-   <a href="{{ link }}">Ver todos <i class="bi bi-chevron-right"></i></a>
+  <a href="{{ link }}">Ver todos
+    <i class="bi bi-chevron-right"></i>
+  </a>
 </p>
 
 <div class="container-card-products">
-   {% for item in products %}
-   {% element 'snippets/product' {'product' : item} %}
-   {% endfor %}
+  {% for item in products %}
+    {% element 'snippets/product' {'product' : item} %}
+  {% endfor %}
 </div>
 
 {# Tag para depuração #}
