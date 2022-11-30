@@ -159,7 +159,7 @@
     <div class="related_products__container">
       {% for item in product.related_products %}
         {% element 'snippets/product' {
-      product: item } %}
+      product: item, loading : 'lazy' } %}
       {% endfor %}
     </div>
   </div>

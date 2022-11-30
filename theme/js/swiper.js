@@ -51,10 +51,11 @@ var swiper = new Swiper(".thumbsSlider", {
 });
 
 var swiper2 = new Swiper(".productSlider", {
-  lazy: true,
   preloadImages: false,
+  lazy: {
+    loadPrevNext: true
+  },
   spaceBetween: 10,
-
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -67,7 +68,9 @@ var swiper2 = new Swiper(".productSlider", {
 // Slider Showroom
 
 var swiper2 = new Swiper(".showroomSlider", {
-  lazy: true,
+  lazy: {
+    loadPrevNext: true
+  },
    
   navigation: {
     nextEl: ".swiper-button-next",
