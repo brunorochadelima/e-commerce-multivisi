@@ -40,8 +40,13 @@
 
     {# Info de compra do produto #}
     <div class="product">
+
+      <div class="prod-star" style="height: 20px">
+        <div id="yv-review-quickreview"></div>
+      </div>
+      {# {% element 'snippets/star_ranking' { review: product.ranking } %} #}
+
       <h1 class="product__name">{{ product.name }}</h1>
-      {% element 'snippets/star_ranking' { review: product.ranking } %}
 
       <p class="product__brand">
         {{ "Marca: " ~ product.brand ~ " - Cod: " ~ product.id ~ " | " }}
@@ -66,7 +71,8 @@
         em
         {{ product.payment_option_details[2].plots }}x
         <b>R$
-          {{ product.payment_option_details[2].value|currency }}</b> sem juros no cartão de crédito
+          {{ product.payment_option_details[2].value|currency }}</b>
+        sem juros no cartão de crédito
       </p>
 
       <form action="{{ links.cart_add ~ product.id }}" method="POST">
@@ -97,7 +103,7 @@
             <button class="product__buy" type="submit" value="Comprar agora" onclick="return validaSeSelecionouVariante()">
               <i class="bi bi-cart2" style="font-size: 1.5rem"></i>
               Comprar
-                            agora
+                                          agora
             </button>
           </div>
         </div>

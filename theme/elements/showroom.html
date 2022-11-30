@@ -1,0 +1,140 @@
+{% set fotos_uberlandia = [
+ 'https://i.ibb.co/wzNBq9k/showroom-uberlandia-01.jpg',
+ 'https://i.ibb.co/y0LSx5x/Showroom-uberlandia-01-1.jpg',
+ 'https://i.ibb.co/7QGQgcN/showroom-uberlandia-02.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/922/RDcWam.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/922/pnHUEo.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/924/ZdHX0N.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/922/QWstef.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/924/Inplms.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/924/2yqRap.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/924/9GbWRd.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/922/Wuy3Lg.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/924/nD7oPA.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/924/67L3ve.jpg',
+ 'https://imagizer.imageshack.com/v2/910x572q90/924/NYQVrG.jpg'
+ ]
+%}
+
+{% set fotos_belo_horizonte = [
+ 'img/showroom/Showroom-belohorizonte-1.jpg',
+ 'img/showroom/Showroom-belohorizonte-2.jpg',
+ 'img/showroom/Showroom-belohorizonte-3.jpg',
+ 'img/showroom/Showroom-belohorizonte-4.jpg',
+ 'img/showroom/Showroom-belohorizonte-5.jpg',
+ 'img/showroom/Showroom-belohorizonte-6.jpg',
+ 'img/showroom/Showroom-belohorizonte-7.jpg',
+ 'img/showroom/Showroom-belohorizonte-8.jpg',
+ 'img/showroom/Showroom-belohorizonte-9.jpg'
+ ]
+%}
+
+
+<div class="container">
+  <section class="hero">
+    <div>
+      <h1>Nós temos uma Loja perto de você</h1>
+      <p>Venha nos visitar e conhecer as nossas máquinas</p>
+      <a href="https://materiais.multivisi.com.br/pagina-agendamento-showroom-multivisi">AGENDAR VISITA</a>
+    </div>
+    <img src="{{ asset('img/showroom/capa-showroom-multivisi.png') }}" alt="showroom-multivisi" width="779" height="564">
+  </section>
+
+  <section class="list">
+    <span data-id="uberlandia" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Uberlândia</span>
+
+    <span data-id="belo-horizonte" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Belo Horizonte</span>
+
+    <span data-id="porto-alegre" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Porto Alegre</span>
+
+    <span data-id="recife" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Recife</span>
+
+    <span data-id="rio-de-janeiro" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Rio de Janeiro</span>
+
+    <span data-id="sao-paulo" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>São Paulo</span>
+
+    <span data-id="goiania" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Goiânia</span>
+
+    <span data-id="belem" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Belém</span>
+
+    <span data-id="cuiaba" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Cuiabá</span>
+
+    <span data-id="curitiba" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Curitiba</span>
+
+    <span data-id="vila-velha" onclick="getLoja(this)">
+      <i class="bi bi-geo-alt"></i>Vila Velha</span>
+  </section>
+
+  <section
+    class="loja ocultar" id="uberlandia">
+    <!--uberlândia -->
+    <div class="loja__box-container">
+      <div class="swiper showroomSlider">
+        <div class="swiper-wrapper">
+          {% for foto in fotos_uberlandia %}
+            <div class="swiper-slide">
+              <img data-src="{{ foto }}" loading="lazy" class="swiper-lazy"/>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="loja__info-contact">
+        <h3><i class="bi bi-house"></i> Endereço</h3>
+        <p>Rua Tupaciguara,274| B.Aparecida Uberlândia - MG</p>
+        <h3><i class="bi bi-telephone"></i> Contato</h3>
+        <p>(34) 3257-0800</p>
+      </div>
+    </div>
+    <!-- mapa -->
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.500125918502!2d-48.27423948476202!3d-18.90924458718372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a445ae2993223f%3A0x4bb2dcfc0c9bfdd2!2sR.%20Tupaciguara%2C%20274%20-%20Nossa%20Sra.%20Aparecida%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038400-629!5e0!3m2!1spt-BR!2sbr!4v1605645655523!5m2!1spt-BR!2sbr" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section class="loja ocultar" id="belo-horizonte">
+    <div class="loja__box-container">
+      <div class="swiper showroomSlider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <iframe width="100%" height="350" src="https://www.youtube.com/embed/PGuQdC5E9oQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          {% for foto in fotos_belo_horizonte %}
+            <div class="swiper-slide">
+              <img
+              data-src="{{ asset(foto) }}" loading="lazy" class="swiper-lazy"/>
+            {# <img data-src="{{ asset('img/showroom/Showroom-belohorizonte-9.jpg') }}" class="swiper-lazy"> #}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="loja__info-contact">
+        <h3><i class="bi bi-house"></i> Endereço</h3>
+        <p>Rua Bernardo Guimarães, 1893 | B. Lourdes, Belo Horizonte - MG</p>
+        <h3><i class="bi bi-telephone"></i> Contato</h3>
+        <p>(31) 3508-8324</p>
+      </div>
+    </div>
+    <!-- mapa -->
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8943668675515!2d-43.94438758453925!3d-19.928855743421348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699dfc34d0cb9%3A0x71b23e5f9a8d6c2c!2sR.%20Bernardo%20Guimar%C3%A3es%2C%201893%20-%20Funcion%C3%A1rios%2C%20Belo%20Horizonte%20-%20MG%2C%2030140-081!5e0!3m2!1spt-BR!2sbr!4v1573477736160!5m2!1spt-BR!2sbr" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy"></iframe>
+    </div>
+  </section>
+
+
+</div>

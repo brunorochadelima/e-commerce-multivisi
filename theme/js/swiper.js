@@ -1,7 +1,7 @@
 var swiper = new Swiper(".banner-home", {
   // preloadImages: false,
   // cssMode: true,
-  lazy: true, 
+  lazy: true,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -62,4 +62,20 @@ var swiper2 = new Swiper(".productSlider", {
   thumbs: {
     swiper: swiper,
   },
+});
+
+// Slider Showroom
+
+var swiper2 = new Swiper(".showroomSlider", {
+  lazy: true,
+   
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  // mousewheel: true,
+  keyboard: true,
 });

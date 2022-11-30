@@ -1,0 +1,115 @@
+@import "base.scss";
+
+.ocultar {
+  display: none;
+}
+
+section.hero {
+  margin: 1rem 0;
+  color: $dark900;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  & div:first-child {
+    max-width: 450px;
+
+    h1 {
+      font-size: 3.8rem;
+      margin-bottom: 0;
+
+      @media screen and (max-width: 700px) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      background-color: $bluePrimary;
+      padding: 1rem;
+      margin-bottom: 0.8rem;
+      border-radius: 16px;
+      color: #fff;
+
+      @media screen and (max-width: 700px) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+section.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+
+  span {
+    display: inline-block;
+    font-size: 1.2rem;
+    min-width: 200px;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 16px;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+        rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+}
+
+.loja {
+  color: $dark900;
+
+  .swiper {
+    margin: 0;
+  }
+
+  &__box-container {
+    background: #fff;
+    border-radius: 16px;
+    padding: .5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .showroomSlider {
+    width: 750px;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  &__info-contact {
+    max-width: 420px;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .map iframe {
+    border-radius: 16px;
+    margin: 2rem 0;
+  }
+}
