@@ -68,7 +68,7 @@ section.list {
 
   @media screen and (max-width: 700px) {
     flex-wrap: nowrap;
-    overflow: scroll;
+    overflow: auto;
   }
 }
 
@@ -97,6 +97,7 @@ section.list {
   }
 
   &__info-contact {
+    padding: 2rem;
     max-width: 420px;
 
     h3 {

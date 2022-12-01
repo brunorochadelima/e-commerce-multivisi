@@ -1,34 +1,206 @@
-{% set fotos_uberlandia = [
- 'https://i.ibb.co/wzNBq9k/showroom-uberlandia-01.jpg',
- 'https://i.ibb.co/y0LSx5x/Showroom-uberlandia-01-1.jpg',
- 'https://i.ibb.co/7QGQgcN/showroom-uberlandia-02.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/922/RDcWam.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/922/pnHUEo.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/924/ZdHX0N.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/922/QWstef.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/924/Inplms.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/924/2yqRap.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/924/9GbWRd.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/922/Wuy3Lg.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/924/nD7oPA.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/924/67L3ve.jpg',
- 'https://imagizer.imageshack.com/v2/910x572q90/924/NYQVrG.jpg'
- ]
-%}
+{% set lojas = [
+  {'id' : 's001', 
+  'name' : 'Uberlândia', 
+  'address': 'Rua Tupaciguara,274| B.Aparecida Uberlândia - MG', 
+  'phone': '(34) 3257-0800', 
+  'images': [
+    'img/showroom/showroom-uberlandia-01.jpg',
+    'img/showroom/showroom-uberlandia-02.jpg',
+    'img/showroom/showroom-uberlandia-03.jpg',
+    'img/showroom/showroom-uberlandia-04.jpg',
+    'img/showroom/showroom-uberlandia-05.jpg', 
+    'img/showroom/showroom-uberlandia-06.jpg',
+    'img/showroom/showroom-uberlandia-07.jpg',
+    'img/showroom/showroom-uberlandia-08.jpg',
+    'img/showroom/showroom-uberlandia-09.jpg',
+    'img/showroom/showroom-uberlandia-10.jpg',
+    'img/showroom/showroom-uberlandia-11.jpg',
+    'img/showroom/showroom-uberlandia-12.jpg',
+    'img/showroom/showroom-uberlandia-13.jpg',
+    'img/showroom/showroom-uberlandia-14.jpg',
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.500125918502!2d-48.27423948476202!3d-18.90924458718372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a445ae2993223f%3A0x4bb2dcfc0c9bfdd2!2sR.%20Tupaciguara%2C%20274%20-%20Nossa%20Sra.%20Aparecida%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038400-629!5e0!3m2!1spt-BR!2sbr!4v1605645655523!5m2!1spt-BR!2sbr',
+  'video' : ''
+  },
 
-{% set fotos_belo_horizonte = [
- 'img/showroom/Showroom-belohorizonte-1.jpg',
- 'img/showroom/Showroom-belohorizonte-2.jpg',
- 'img/showroom/Showroom-belohorizonte-3.jpg',
- 'img/showroom/Showroom-belohorizonte-4.jpg',
- 'img/showroom/Showroom-belohorizonte-5.jpg',
- 'img/showroom/Showroom-belohorizonte-6.jpg',
- 'img/showroom/Showroom-belohorizonte-7.jpg',
- 'img/showroom/Showroom-belohorizonte-8.jpg',
- 'img/showroom/Showroom-belohorizonte-9.jpg'
- ]
-%}
+  {'id' : 's002', 
+  'name' : 'Belo Horizonte', 
+  'address': 'Rua Bernardo Guimarães, 1893 | B. Lourdes, Belo Horizonte - MG', 
+  'phone': '(31) 3508-8324', 
+  'images': [
+    'img/showroom/Showroom-belohorizonte-1.jpg', 
+    'img/showroom/Showroom-belohorizonte-2.jpg',
+    'img/showroom/Showroom-belohorizonte-3.jpg',
+    'img/showroom/Showroom-belohorizonte-4.jpg',
+    'img/showroom/Showroom-belohorizonte-5.jpg',
+    'img/showroom/Showroom-belohorizonte-6.jpg',
+    'img/showroom/Showroom-belohorizonte-7.jpg',
+    'img/showroom/Showroom-belohorizonte-8.jpg',
+    'img/showroom/Showroom-belohorizonte-9.jpg',
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8943668675515!2d-43.94438758453925!3d-19.928855743421348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699dfc34d0cb9%3A0x71b23e5f9a8d6c2c!2sR.%20Bernardo%20Guimar%C3%A3es%2C%201893%20-%20Funcion%C3%A1rios%2C%20Belo%20Horizonte%20-%20MG%2C%2030140-081!5e0!3m2!1spt-BR!2sbr!4v1573477736160!5m2!1spt-BR!2sbr',
+  'video' : 'https://www.youtube.com/embed/PGuQdC5E9oQ'
+  },  
 
+  {'id' : 's003', 
+  'name' : 'Porto Alegre', 
+  'address': 'Rua São Luís 721 - Santana, Porto Alegre - RS, 90620-170', 
+  'phone': '(51) 3103-0038', 
+  'images': [
+    'img/showroom/showroom-porto-alegre-1.jpg',
+    'img/showroom/showroom-porto-alegre-2.jpg',
+    'img/showroom/showroom-porto-alegre-3.jpg',
+    'img/showroom/showroom-porto-alegre-4.jpg', 
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.5631329832963!2d-51.20562728457439!3d-30.049388781880516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197841076599e9%3A0x4284dd3310469b77!2sR.%20S%C3%A3o%20Lu%C3%ADs%2C%20721%20-%20Santana%2C%20Porto%20Alegre%20-%20RS%2C%2090620-170!5e0!3m2!1spt-BR!2sbr!4v1659456404782!5m2!1spt-BR!2sbr',
+  'video' : ''
+  },  
+
+  {'id' : 's004', 
+  'name' : 'Recife', 
+  'address': 'Rua Ribeiro de Brito, 1002 | B. Boa viagem, Recife - PE', 
+  'phone': '(81) 3771-0021', 
+  'images': [
+    'img/showroom/Showroom-recife-1.jpg',
+    'img/showroom/Showroom-recife-2.jpg', 
+    'img/showroom/Showroom-recife-3.jpg', 
+    'img/showroom/Showroom-recife-4.jpg', 
+    'img/showroom/Showroom-recife-5.jpg', 
+    'img/showroom/Showroom-recife-6.jpg',  
+    'img/showroom/Showroom-recife-7.jpg', 
+    'img/showroom/Showroom-recife-8.jpg',   
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.7915905513105!2d-34.90764088468906!3d-8.122689883546482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1fb3408d7e73%3A0xb96ad7482fb40bb5!2sR.%20Ribeiro%20de%20Brito%2C%201002%20-%20Boa%20Viagem%2C%20Recife%20-%20PE%2C%2051021-310!5e0!3m2!1spt-BR!2sbr!4v1573477782160!5m2!1spt-BR!2sbr',
+  'video' : 'https://www.youtube.com/embed/s1w6lgZ8R5k'
+  },
+
+  {'id' : 's005', 
+  'name' : 'Rio de Janeiro', 
+  'address': 'Rua Tirol, Nº 536 LJ 107 | B. Freguesia (Jacarepaguá), Rio de Janeiro - RJ', 
+  'phone': '(21) 3512-0527', 
+  'images': [
+    'img/showroom/showroom-rio-1.jpg',
+    'img/showroom/showroom-rio-2.jpg',
+    'img/showroom/showroom-rio-3.jpg', 
+    'img/showroom/showroom-rio-4.jpg',
+    'img/showroom/showroom-rio-5.jpg',
+    'img/showroom/showroom-rio-6.jpg',
+    'img/showroom/showroom-rio-7.jpg',
+    'img/showroom/showroom-rio-8.jpg',
+    'img/showroom/showroom-rio-9.jpg',
+    'img/showroom/showroom-rio-10.jpg',
+    'img/showroom/showroom-rio-11.jpg',
+    'img/showroom/showroom-rio-12.jpg',
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.2766361329386!2d-43.33908538448711!3d-22.94003694482687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd82fa7212699%3A0x9a3a6cb78038cf9e!2sR.%20Tirol%2C%20536%20-%20LJ%20107%20%7C%20B%20-%20Freguesia%20de%20Jacarepagu%C3%A1%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022750-009!5e0!3m2!1spt-BR!2sbr!4v1573477872620!5m2!1spt-BR!2sbr',
+  'video' : 'https://www.youtube.com/embed/UPpPBe_S9ZY'
+  },
+
+  {'id' : 's006', 
+  'name' : 'São Paulo', 
+  'address': 'Rua Panônia 461, Vila Sônia- Morumbi, CEP: 05629-010, São Paulo - SP', 
+  'phone': '(11) 3014-0475', 
+  'images': [
+    'img/showroom/Showroom-sao-paulo-5.png',
+    'img/showroom/Showroom-sao-paulo-1.jpeg', 
+    'img/showroom/Showroom-sao-paulo-2.jpeg',
+    'img/showroom/Showroom-sao-paulo-3.jpeg',
+    'img/showroom/Showroom-sao-paulo-4.jpeg',
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.9993962484573!2d-46.731063899999995!3d-23.6043546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce56bedfb0309f%3A0xe784d0142db6326d!2sRua%20Pan%C3%B4nia%2C%20461%20-%20Jardim%20Colombo%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005629-010!5e0!3m2!1spt-BR!2sbr!4v1664977128824!5m2!1spt-BR!2sbr',
+  'video' : ''
+  },
+
+  {'id' : 's007', 
+  'name' : 'Goiânia', 
+  'address': 'Rua 85, Número 684 - Cond Eldorado Center Sala 5 St. Oeste. CEP: 74120-090, Goiânia - GO', 
+  'phone': '(62) 3412-1156', 
+  'images': [
+    'img/showroom/showroom-goiania-1.jpg',
+    'img/showroom/showroom-goiania-2.jpg',
+    'img/showroom/showroom-goiania-3.jpg',
+    'img/showroom/showroom-goiania-5.jpg', 
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.7839004369416!2d-49.2597698!3d-16.6876939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef1693e7e2c5b%3A0x6cd5c338cce4d42b!2sCondom%C3%ADnio%20Edif%C3%ADcio%20Eldorado%20Center!5e0!3m2!1spt-BR!2sbr!4v1668431368896!5m2!1spt-BR!2sbr',
+  'video' : ''
+  }, 
+
+  {'id' : 's008', 
+  'name' : 'Belém', 
+  'address': 'Av. Nª Sra. de Nazaré, 532 - Sala 11 - Nazaré, Belém - PA, 66040-145', 
+  'phone': '(34) 3257-0800', 
+  'images': [
+    'img/showroom/showroom-belem-2.jpg',
+    'img/showroom/showroom-belem-3.jpg',
+    'img/showroom/showroom-belem-4.jpg', 
+    'img/showroom/showroom-belem-5.jpg',
+    'img/showroom/showroom-belem-6.jpg',
+    'img/showroom/showroom-belem-7.jpg',
+    'img/showroom/showroom-belem-8.jpg',
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5351690585794!2d-48.4879804!3d-1.4531539999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48e855b2dd78b%3A0x347eb05a04de467!2zQXYuIE7CqiBTcmEuIGRlIE5hemFyw6ksIDUzMiAtIE5hemFyw6ksIEJlbMOpbSAtIFBBLCA2NjA0MC0xNDU!5e0!3m2!1spt-BR!2sbr!4v1657728987467!5m2!1spt-BR!2sbr',
+  'video' : ''
+  }, 
+
+  {'id' : 's009', 
+  'name' : 'Cuiabá', 
+  'address': 'Avenida dos Florais, n.º 877, Sala 104, Condomínio Florais Cuiabá, Bairro do Lipa, Cuiabá - MT', 
+  'phone': '(34) 3257-0800', 
+  'images': [
+    'img/showroom/showroom-cuiaba-1.jpg',
+    'img/showroom/showroom-cuiaba-2.jpg',
+    'img/showroom/showroom-cuiaba-3.jpg',
+    'img/showroom/showroom-cuiaba-4.jpg',
+    'img/showroom/showroom-cuiaba-5.jpg',
+    'img/showroom/showroom-cuiaba-6.jpg',
+    'img/showroom/showroom-cuiaba-7.jpg', 
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.9208913021694!2d-56.101169484532676!3d-15.542371020948602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939db12ebb0c0e53%3A0xf57fecdc26d394d7!2sAv.%20dos%20Florais%2C%20877%20-%20Condominio%20Florais%20Cuiaba%20Res.%2C%20Cuiab%C3%A1%20-%20MT%2C%2078049-400!5e0!3m2!1spt-BR!2sbr!4v1653671041353!5m2!1spt-BR!2sbr',
+  'video' : ''
+  },
+
+  {'id' : 's010', 
+  'name' : 'Curitiba', 
+  'address': 'Rua Izaac Ferreira da Cruz, 4731 - Sítio Cercado, Curitiba - PR', 
+  'phone': '(41) 3012-0051', 
+  'images': [
+    'img/showroom/Showroom-Curitiba-1.jpg',
+    'img/showroom/Showroom-Curitiba-2.jpg', 
+    'img/showroom/Showroom-Curitiba-3.jpg',  
+    'img/showroom/Showroom-Curitiba-4.jpg', 
+    'img/showroom/Showroom-Curitiba-5.jpg', 
+    'img/showroom/Showroom-Curitiba-6.jpg', 
+    'img/showroom/Showroom-Curitiba-7.jpg', 
+    'img/showroom/Showroom-Curitiba-8.jpg', 
+    'img/showroom/Showroom-Curitiba-9.jpg', 
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.2237460382826!2d-49.257934299999995!3d-25.530922899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfba4642478ed%3A0x82d17b4d878f7489!2sRua%20Izaac%20Ferreira%20da%20Cruz%2C%204731%20-%20S%C3%ADtio%20Cercado%2C%20Curitiba%20-%20PR%2C%2081910-000!5e0!3m2!1spt-BR!2sbr!4v1651252942048!5m2!1spt-BR!2sbr',
+  'video' : ''
+  }, 
+
+  {'id' : 's011', 
+  'name' : 'Vila Velha', 
+  'address': 'Avenida Professora Francelina Carneiro Setúbal, 550 loja 02| Vila Velha ES', 
+  'phone': '', 
+  'images': [
+    'img/showroom/Showroom-vila-velha-1.jpg',
+    'img/showroom/Showroom-vila-velha-2.jpg',  
+    'img/showroom/Showroom-vila-velha-3.jpg', 
+    'img/showroom/Showroom-vila-velha-4.jpg', 
+    'img/showroom/Showroom-vila-velha-5.jpg', 
+    'img/showroom/Showroom-vila-velha-6.jpg', 
+    'img/showroom/Showroom-vila-velha-7.jpg', 
+    'img/showroom/Showroom-vila-velha-8.jpg', 
+    'img/showroom/Showroom-vila-velha-9.jpg', 
+  ],
+  'map' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.728947404675!2d-40.295853584532004!3d-20.352813256853253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8160e097db56d%3A0x1bcbf53a7d1b6c32!2sAv.%20Profa.%20Francelina%20Carneiro%20Set%C3%BAbal%2C%20550%20-%20Itapu%C3%A3%2C%20Vila%20Velha%20-%20ES%2C%2029101-641!5e0!3m2!1spt-BR!2sbr!4v1664977406058!5m2!1spt-BR!2sbr',
+  'video' : ''
+  },     
+] %}
+
+{# <pre>
+  {{ dump(lojas) }}
+</pre> #}
 
 <div class="container">
   <section class="hero">
@@ -37,104 +209,57 @@
       <p>Venha nos visitar e conhecer as nossas máquinas</p>
       <a href="https://materiais.multivisi.com.br/pagina-agendamento-showroom-multivisi">AGENDAR VISITA</a>
     </div>
-    <img src="{{ asset('img/showroom/capa-showroom-multivisi.png') }}" alt="showroom-multivisi" width="779" height="564">
+    <img src="{{ asset('img/showroom/capa-showroom-multivisi.png') }}" alt="showroom-multivisi" width="779" height="564"></section>
   </section>
 
   <section class="list">
-    <span data-id="uberlandia" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Uberlândia</span>
-
-    <span data-id="belo-horizonte" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Belo Horizonte</span>
-
-    <span data-id="porto-alegre" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Porto Alegre</span>
-
-    <span data-id="recife" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Recife</span>
-
-    <span data-id="rio-de-janeiro" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Rio de Janeiro</span>
-
-    <span data-id="sao-paulo" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>São Paulo</span>
-
-    <span data-id="goiania" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Goiânia</span>
-
-    <span data-id="belem" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Belém</span>
-
-    <span data-id="cuiaba" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Cuiabá</span>
-
-    <span data-id="curitiba" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Curitiba</span>
-
-    <span data-id="vila-velha" onclick="getLoja(this)">
-      <i class="bi bi-geo-alt"></i>Vila Velha</span>
+    {% for loja in lojas %}
+      <span data-id="{{ loja.id }}" onclick="getLoja(this)">
+        <i class="bi bi-geo-alt"></i>
+        {{ loja.name }}</span>
+    {% endfor %}
   </section>
 
-  <section
-    class="loja ocultar" id="uberlandia">
-    <!--uberlândia -->
-    <div class="loja__box-container">
-      <div class="swiper showroomSlider">
-        <div class="swiper-wrapper">
-          {% for foto in fotos_uberlandia %}
-            <div class="swiper-slide">
-              <img data-src="{{ foto }}" loading="lazy" class="swiper-lazy"/>
-            </div>
-          {% endfor %}
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-      <div class="loja__info-contact">
-        <h3><i class="bi bi-house"></i> Endereço</h3>
-        <p>Rua Tupaciguara,274| B.Aparecida Uberlândia - MG</p>
-        <h3><i class="bi bi-telephone"></i> Contato</h3>
-        <p>(34) 3257-0800</p>
-      </div>
-    </div>
-    <!-- mapa -->
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.500125918502!2d-48.27423948476202!3d-18.90924458718372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a445ae2993223f%3A0x4bb2dcfc0c9bfdd2!2sR.%20Tupaciguara%2C%20274%20-%20Nossa%20Sra.%20Aparecida%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038400-629!5e0!3m2!1spt-BR!2sbr!4v1605645655523!5m2!1spt-BR!2sbr" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy"></iframe>
-    </div>
-  </section>
-
-  <section class="loja ocultar" id="belo-horizonte">
-    <div class="loja__box-container">
-      <div class="swiper showroomSlider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <iframe width="100%" height="350" src="https://www.youtube.com/embed/PGuQdC5E9oQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  {% for loja in lojas %}
+    <section
+      class="loja ocultar" id="{{loja.id}}">
+      <!--uberlândia -->
+      <div class="loja__box-container">
+        <div class="swiper showroomSlider">
+          <div class="swiper-wrapper">
+            {% if loja.video %}
+              <div class="swiper-slide">
+                <iframe width="100%" height="315" src="{{ loja.video }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+              </div>
+            {% endif %}
+            {% for img in loja.images %}
+              <div
+                class="swiper-slide">
+                {# <img data-src="{{ img }}" loading="lazy" class="swiper-lazy"/> #}
+                <img data-src="{{ asset(img) }}" loading="lazy" class="swiper-lazy"/>
+              </div>
+            {% endfor %}
           </div>
-          {% for foto in fotos_belo_horizonte %}
-            <div class="swiper-slide">
-              <img
-              data-src="{{ asset(foto) }}" loading="lazy" class="swiper-lazy"/>
-            {# <img data-src="{{ asset('img/showroom/Showroom-belohorizonte-9.jpg') }}" class="swiper-lazy"> #}
-            </div>
-          {% endfor %}
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+        <div class="loja__info-contact">
+          <h3>
+            <i class="bi bi-house"></i>
+            Endereço</h3>
+          <p>{{ loja.address }}</p>
+          <h3>
+            <i class="bi bi-telephone"></i>
+            Contato</h3>
+          <p>{{ loja.phone }}</p>
+        </div>
       </div>
-      <div class="loja__info-contact">
-        <h3><i class="bi bi-house"></i> Endereço</h3>
-        <p>Rua Bernardo Guimarães, 1893 | B. Lourdes, Belo Horizonte - MG</p>
-        <h3><i class="bi bi-telephone"></i> Contato</h3>
-        <p>(31) 3508-8324</p>
+      <!-- mapa -->
+      <div class="map">
+        <iframe src="{{ loja.map }}" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy"></iframe>
       </div>
-    </div>
-    <!-- mapa -->
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8943668675515!2d-43.94438758453925!3d-19.928855743421348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699dfc34d0cb9%3A0x71b23e5f9a8d6c2c!2sR.%20Bernardo%20Guimar%C3%A3es%2C%201893%20-%20Funcion%C3%A1rios%2C%20Belo%20Horizonte%20-%20MG%2C%2030140-081!5e0!3m2!1spt-BR!2sbr!4v1573477736160!5m2!1spt-BR!2sbr" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy"></iframe>
-    </div>
-  </section>
-
+    </section>
+  {% endfor %}
 
 </div>
