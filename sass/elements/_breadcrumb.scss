@@ -1,8 +1,11 @@
 .breadcrumb { 
-  padding: 1rem 0;
+  display: flex;
+  overflow-x: auto;
+  padding: 1.5rem 0;
 
   &__item {
     color: #416788;
+    white-space: nowrap;
   }
 
   &__icon {
