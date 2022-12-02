@@ -1,7 +1,8 @@
 var swiper = new Swiper(".banner-home", {
-  // preloadImages: false,
-  // cssMode: true,
-  lazy: true,
+  preloadImages: false,
+  lazy: {
+    loadPrevNext: true
+  },
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -68,6 +69,7 @@ var swiper2 = new Swiper(".productSlider", {
 // Slider Showroom
 
 var swiper2 = new Swiper(".showroomSlider", {
+  preloadImages: false,
   lazy: {
     loadPrevNext: true
   },
