@@ -97,6 +97,8 @@
     <script async src="{{ asset('js/showroom.js')}}"></script> 
     {% endif %}  
 
+    <script async src="{{ asset('js/modules/theme.js')}}"></script>
+
     <!-- default tray -->
     {{ tray.scripts }}
     {% element 'snippets/modal' %}
@@ -104,5 +106,7 @@
     {% element 'snippets/pageview' %} 
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
     {% endspaceless %}
+
+    {% element 'snippets/cookies_banner' %}
   </body>
 </html>
