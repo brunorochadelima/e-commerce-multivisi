@@ -1,4 +1,4 @@
-<ul class="menu_categories">
+<ul class="menu_categories" onmouseover="modalOverlay()" onmouseout="exitModalOverlay()">
   {% for categoria in categories %}
     <li>
       <a class="menu_categories__category_name" href="{{ categoria.link }}">{{ categoria.name }}</a>

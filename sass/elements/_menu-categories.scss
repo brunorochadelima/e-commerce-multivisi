@@ -4,7 +4,7 @@
   transition: .2s;
   position: absolute;
   top: 35px;
-  z-index: 9999;
+  z-index: 3;
   column-count: 4;
   column-fill: auto;
   column-gap: 20px;
@@ -36,9 +36,10 @@
 
   &__category_name {
     font-weight: bold;
-  }
+  } 
 }
 
 .menu_categories > li {
   padding-bottom: 1rem;
 }
+
