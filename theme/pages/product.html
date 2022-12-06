@@ -54,9 +54,10 @@
       </p>
 
       {% if product.price_offer > 0 %}
-        <s>R$ {{ product.product_price|currency }}</s>
-        <span class="product__offer">-{{((product.price - product.payment_option_details[0].value) /
-         product.price * 100)|number_format}}%</span>
+        <s>R$
+          {{ product.product_price|currency }}</s>
+        <span class="product__offer">-{{ ((product.price - product.payment_option_details[0].value) /
+         product.price * 100)|number_format }}%</span>
       {% endif %}
 
       <p class="product__price">
@@ -66,14 +67,11 @@
         <span>à vista no boleto, transferência bancária ou PIX</span>
       </p>
 
-      <p><i class="bi bi-credit-card"></i>
-         R$
-          {{ product.calculated_price|currency }}
-        em
-        {{ product.payment_option_details[2].plots }}x de
-        R$
-          {{ product.payment_option_details[2].value|currency }}
-        sem juros no cartão de crédito
+      <p>
+        <i class="bi bi-credit-card"></i> R$
+        {{ product.calculated_price|currency }}em
+        {{ product.payment_option_details[2].plots }}x de R$
+        {{ product.payment_option_details[2].value|currency }} sem juros no cartão de crédito
       </p>
 
       <form action="{{ links.cart_add ~ product.id }}" method="POST">
@@ -95,7 +93,7 @@
         <div>
           <div>
             <label class="product_qtd">
-              <b>Quantidade</b>
+              <b>Quantidade </b>
               <input id="quant" type="text" name="quant" value="1" maxlength="3" style="width: 80px"/>
             </label>
           </div>
@@ -118,21 +116,7 @@
       {% endif %}
       <hr/>
 
-      {# Frete #}
-      {% if product.stock > 0 %}
-        <div id="product-shipping" data-productId="{{ product.id }}">
-          <p>Consultar prazo e valor do frete:</p>
-          <div>
-            <label for="cep" class="shipping-label">CEP
-            </label>
-            <input class="shipping-input" id="cep" name="calcule o frete" placeholder="00000-000" type="text" minlength="9" maxlength="9" placeholder="Informe seu CEP" required/>
-            <button class="btn-calcular" onclick="calcularFrete()">
-              Calcular
-            </button>
-          </div>
-          <div class="shipping-result"></div>
-        </div>
-      {% endif %}
+     {% element ('snippets/product-shipping') %}
     </div>
 
   </div>
@@ -167,10 +151,14 @@
 
 {% element "snippets/product-reviews" %}
 
-<pre>
+{# <pre>
   {{ dump(productTabs.custom.content) }}
-</pre>
+</pre> #}
 
+{# {{ productHelper.shipping() }}
+{% include "https://www.multivisi.com.br/mvc/store/product/shipping/?loja=196157&simular=ok&cep1=38413&cep2=288&quantidade=1&id_produto=3619" %} #}
+
+{# {% file_get_contents("/mvc/store/product/shipping/?loja=196157&simular=ok&cep1=38413&cep2=288&quantidade=1&id_produto=3619") %} #}
 {#
 <pre>
   {{ dump(product.variants) }}

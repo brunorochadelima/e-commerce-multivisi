@@ -1,5 +1,6 @@
 @import "base";
-@import "./elements/card-product", "./elements/breadcrumb", "./elements/product-reviews";
+@import "./elements/card-product", "./elements/breadcrumb",
+  "./elements/product-reviews";
 
 // Slider
 .swiper-slide {
@@ -76,7 +77,7 @@
     color: #fff;
     font-weight: bold;
     border-radius: 8px;
-    padding: .2rem;
+    padding: 0.2rem;
   }
 
   &__price {
@@ -149,9 +150,15 @@
 
 .shipping-result {
   margin: 0.8rem 0;
+  font-size: 1rem;
+  color: #2c3e50;
 
-  table tbody tr td {
-    font-size: 15px;
+  table tbody tr th {
+    background: none;
+  }
+
+  table td {
+    font-size: 0.8rem;
   }
 }
 
@@ -159,7 +166,12 @@ input.shipping-input {
   padding: 1rem;
   border-radius: 8px;
   border: 1px solid rgb(153, 153, 153);
-  max-width: 150px;
+  max-width: 95px;
+}
+
+input.shipping-input2 {
+  @extend .shipping-input;
+  max-width: 70px;
 }
 
 .btn-calcular {

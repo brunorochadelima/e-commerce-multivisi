@@ -71,7 +71,7 @@
 
     {% element 'header' %}     
     {{ content_for_layout }}
-    {% if pages.current in ['showroom'] %}      
+    {% if pages.current in ['showroom', 'politica-de-cookies'] %}      
       {% element pages.current %}
     {% endif %}
     {% element 'footer' %}

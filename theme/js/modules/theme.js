@@ -39,5 +39,5 @@ function exibirBannerCookie() {
     banner.style.right = "10px";
   }
 }
-// setTimeout(exibirBannerCookie, 1500);
+// setTimeout(exibirBannerCookie, 4500);
 exibirBannerCookie();

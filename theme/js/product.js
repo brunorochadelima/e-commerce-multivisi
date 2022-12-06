@@ -27,34 +27,22 @@ function validaSeSelecionouVariante() {
 function calcularFrete() {
   const productId = document.querySelector("#product-shipping");
   const dataProductId = productId.getAttribute("data-productId");
-  const cep1 = document.querySelector("#cep").value.substr(0, 5);
-  const cep2 = document.querySelector("#cep").value.substr(6);
+  const cep1 = document.querySelector("#cep").value;
+  const cep2 = document.querySelector("#cep2").value;
   const quant = document.querySelector("#quant").value;
-
   const shippingResult = document.querySelector(".shipping-result");
+  const url = `https://www.multivisi.com.br/mvc/store/product/shipping/?loja=196157&simular=ok&cep1=${cep1}&cep2=${cep2}&quantidade=${quant}&id_produto=${dataProductId}`;
 
-  fetch(
-    `/mvc/store/product/shipping/?loja=196157&simular=ok&cep1=${cep1}&cep2=${cep2}&quantidade=${quant}&id_produto=${dataProductId}`,
-    {
-      method: "GET",
-    }
-  )
-    .then((response) => {
-      return response.text();
+  fetch(url, {
+    method: "GET",
+    headers: { "Content-type": "text/html; charset=ISO-8859-1" },
+  })
+    .then((response) => response.arrayBuffer())
+    .then((buffer) => {
+      let decoder = new TextDecoder("iso-8859-1");
+      let text = decoder.decode(buffer);
+      console.log(text);
+      shippingResult.innerHTML = text;
     })
-
-    .then((data) => {
-      let parser = new DOMParser();
-      xmlDoc = parser.parseFromString(data, "text/html");
-      // texto = xmlDoc.querySelector(".page-simula-frete");
-      resultadoFrete = xmlDoc.getElementsByTagName("table")[1];
-      shippingResult.appendChild(resultadoFrete);
-    })
-
-    .catch((error) => {
-      console.log(error);
-    });
-
-  // Remove o primeiro filho de shippingResult
-  shippingResult.removeChild(shippingResult.firstElementChild);
+    .catch((err) => console.log(err));
 }
