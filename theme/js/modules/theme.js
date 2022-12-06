@@ -4,7 +4,7 @@ const banner = document.getElementById("banner_cookies");
 function cria_cookie(nome, valor) {
   document.cookie = nome + "=" + valor + "; path=/";
   // oculta o banner depois de aceitar os cookies
-  banner.style.visibility = "hidden";
+  banner.style.display = "none";
 }
 
 function get_cookie(nome_cookie) {
@@ -30,9 +30,9 @@ function get_cookie(nome_cookie) {
 
 function exibirBannerCookie() {
   if (cookie == "true") {
-    banner.style.visibility = "hidden";
+    banner.style.display = "none";
   } else {
-    banner.style.visibility = "visible";
+    banner.style.display = "block";
     banner.style.position = "fixed";
     banner.style.bottom = "10px";
     banner.style.left = "10px";

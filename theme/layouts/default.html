@@ -67,6 +67,7 @@
 
   <body>
     {% spaceless %} 
+    {% element 'snippets/messages' %} 
     {{ googleTagManager.top(pages.current, tagManagerData) }}    
 
     {% element 'header' %}     
@@ -101,8 +102,7 @@
 
     <!-- default tray -->
     {{ tray.scripts }}
-    {% element 'snippets/modal' %}
-    {% element 'snippets/messages' %} 
+    {% element 'snippets/modal' %}  
     {% element 'snippets/pageview' %} 
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
     {% endspaceless %}
