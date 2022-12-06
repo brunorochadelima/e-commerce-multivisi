@@ -65,6 +65,7 @@
 
   .title-login {
     font-size: 1.5rem;
+    margin: 1rem 0;
   }
 
   .container-btns {
@@ -83,6 +84,7 @@
       flex-grow: 1;
       text-align: center;
       font-weight: bold;
+      text-transform: uppercase;
     }
 
     .btn-register {
@@ -95,11 +97,22 @@
       flex-grow: 1;
       text-align: center;
       font-weight: bold;
+      text-transform: uppercase;
     }
   }
 
   .title-categories {
     font-size: 1.5rem;
+    margin: 1rem 0;
+    font-weight: inherit;
+  }
+
+  .lojas {
+    display: block;
+    font-size: 1.5rem;
+    padding: 5px;
+    margin-top: 1rem;
+    color: $dark900;
   }
 }
 
