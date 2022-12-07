@@ -1,0 +1,21 @@
+@import "base";
+
+.container3,
+.board {
+  max-width: 800px;
+  margin: 0 auto;
+  background: none;
+  color: $dark900;
+}
+.topBorder,
+.bottom,
+.Mapa {
+  display: none;
+}
+
+.formulario-contato input,
+textarea {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}

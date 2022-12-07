@@ -1,0 +1,165 @@
+h1 {
+  color: #003ce5;
+  text-align: center;
+}
+
+#frm2 {
+  font-family: "Montserrat", sans-serif;
+
+  & input {
+    padding: 0.8rem;
+    border-radius: 16px !important;
+  }
+
+  & fieldset {
+    border-radius: 16px;
+    padding: 0.5rem;
+  }
+}
+
+#frm2 .board {
+  display: block;
+}
+#frm2 .board .txt-dados-entrega {
+  position: relative;
+  display: none;
+}
+#frm2 .board div span h2,
+#frm2 .board h2 {
+  font-size: 25px;
+  color: #003ce5;
+  display: block;
+  padding: 7px 0;
+}
+#frm2 .board input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+#frm2 .board fieldset {
+  color: #2c3e50;
+  font-size: 1rem;
+  width: 100%;
+  float: left;
+  border: none;
+  background: white;
+  box-shadow: 0 3px 5px -3px;
+  margin-right: 60px;
+  margin-bottom: 30px;
+}
+#frm2 .board fieldset:nth-of-type(2) {
+  display: block;
+  position: relative;
+}
+
+#frm2 .board fieldset #fisica p:first-child {
+  margin-top: 20px;
+}
+
+/*aviso de telefone*/
+#frm2 .board fieldset strong {
+  color: #003ce5;
+  padding: 10px 0px 0px;
+  display: block;
+}
+
+/*remover imagens tray*/
+#CadastroAbas,
+#CadastroAbas li,
+#CadastroAbas li a,
+.topBorderm,
+.topBorder {
+  background: none;
+  border: none;
+}
+
+#CadastroAbas li {
+  background: white;
+  padding: 7px;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.21);
+}
+.content_adm .container .container2 {
+  width: 100% !important;
+}
+.content_adm .container .container2 label {
+  position: relative;
+}
+#fisica > p > label:nth-of-type(1):after,
+#fisica > p > label:nth-of-type(3):after,
+#juridica p:nth-of-type(1) > label:after,
+#juridica p:nth-of-type(2) > label:nth-of-type(1):after,
+#juridica p:nth-of-type(2) > label:nth-of-type(3):after,
+.content_adm
+  .container
+  .container2
+  fieldset:nth-of-type(1)
+  > label:nth-of-type(4):after,
+.content_adm
+  .container
+  .container2
+  fieldset:nth-of-type(2)
+  > p
+  > label:nth-of-type(1):after,
+.content_adm
+  .container
+  .container2
+  fieldset:nth-of-type(2)
+  > p
+  > label:nth-of-type(2):after,
+.content_adm
+  .container
+  .container2
+  fieldset:nth-of-type(2)
+  > p
+  > label:nth-of-type(4):after,
+.content_adm
+  .container
+  .container2
+  fieldset:nth-of-type(2)
+  > p
+  > label:nth-of-type(5):after,
+.content_adm
+  .container
+  .container2
+  fieldset:nth-of-type(2)
+  > p
+  > label:nth-of-type(6):after,
+.content_adm
+  .container
+  .container2
+  fieldset:nth-of-type(2)
+  > p
+  > label:nth-of-type(7):after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 50px;
+  left: 0;
+  background: #003ce5;
+}
+
+.mensagensErro {
+  margin-left: 10px;
+  padding: 3px;
+  background: #003ce5;
+  border: 1px solid #fff;
+  color: white;
+}
+
+@media (min-width: 90em) {
+  #frm2 .board .txt-dados-entrega {
+    top: -60px;
+  }
+
+  #frm2 .board fieldset {
+    width: 45%;
+  }
+  #frm2 .board fieldset:nth-of-type(2) {
+    top: -80px;
+  }
+  #frm2 .board input {
+    width: auto;
+  }
+}
