@@ -1,6 +1,6 @@
 <footer>
   <div class="container footer">
-    <div class="footer__abas">
+    <div class="footer__abas" align="center">
       <img src="{{ asset('img/logo-multivisi.svg') }}" alt="logo Multivisi"/>
 
       <div class="footer__social-icons">
@@ -19,9 +19,11 @@
       </div>
 
       <h2>Selos e certificados</h2>
-      <br/>
-      {{ seals.ebit }}
-      {{ seals.hackersafe }}
+      <div class="footer__selos">
+        {{ seals.ebit }}
+        {{ seals.hackersafe }}
+        <img src="{{ asset('img/icons-footer/certificado-ssl.svg') }}" alt="">
+      </div>
     </div>
 
     <div class="footer__abas">
