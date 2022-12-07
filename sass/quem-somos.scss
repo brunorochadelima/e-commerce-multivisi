@@ -1,0 +1,35 @@
+@import "base";
+
+.quem-somos {
+  color: $dark900;
+
+  .title {
+    color: $bluePrimary;
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  &__sobre {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__sobre > div:first-child {
+    max-width: 600px;
+  }
+
+  &__marcas {
+    margin-bottom: 2rem;
+    padding: 0.8rem;
+    text-align: center;
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0.5rem;
+    }
+  }
+}

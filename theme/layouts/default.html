@@ -58,6 +58,10 @@
     {% if pages.current == 'showroom' %}
       <link rel="stylesheet" href="{{ asset('css/showroom.css')}}">
     {% endif %}
+
+    {% if pages.current == 'quem-somos' %}
+      <link rel="stylesheet" href="{{ asset('css/quem-somos.css')}}">
+    {% endif %}
        
    <link rel="stylesheet" href="{{ asset('css/footer.css') }}"> 
     {{ tray.analytics }}    
@@ -72,7 +76,7 @@
 
     {% element 'header' %}     
     {{ content_for_layout }}
-    {% if pages.current in ['showroom', 'politica-de-cookies'] %}      
+    {% if pages.current in ['showroom', 'politica-de-cookies', 'quem-somos'] %}      
       {% element pages.current %}
     {% endif %}
     {% element 'footer' %}
