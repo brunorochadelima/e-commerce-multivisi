@@ -25,6 +25,7 @@ function validaSeSelecionouVariante() {
 }
 
 function calcularFrete() {
+  
   const productId = document.querySelector("#product-shipping");
   const dataProductId = productId.getAttribute("data-productId");
   const cep1 = document.querySelector("#cep").value;
@@ -32,6 +33,8 @@ function calcularFrete() {
   const quant = document.querySelector("#quant").value;
   const shippingResult = document.querySelector(".shipping-result");
   const url = `https://www.multivisi.com.br/mvc/store/product/shipping/?loja=196157&simular=ok&cep1=${cep1}&cep2=${cep2}&quantidade=${quant}&id_produto=${dataProductId}`;
+  
+  shippingResult.textContent = "Carregando fretes..."
 
   fetch(url, {
     method: "GET",
@@ -41,7 +44,6 @@ function calcularFrete() {
     .then((buffer) => {
       let decoder = new TextDecoder("iso-8859-1");
       let text = decoder.decode(buffer);
-      console.log(text);
       shippingResult.innerHTML = text;
     })
     .catch((err) => console.log(err));
