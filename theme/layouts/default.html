@@ -33,6 +33,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
 
+    {# Melhora LCP nos banners home #}
+    <link rel="preconnect" href="{{ banners.mobile.slides[0].image }}" />
+    <link rel="preconnect" href="{{ banners.home.slides[0].image }}" />
+
     {% if utils.is_mobile %}
     <link rel="stylesheet" href="{{ asset('css/header-mobile.css')}}" />
     {% else %}
@@ -81,6 +85,7 @@
   <pre>
     {{ dump(pages.current) }}
   </pre>
+    
     {% spaceless %} 
     {% element 'snippets/messages' %} 
     {{ googleTagManager.top(pages.current, tagManagerData) }}    
@@ -91,6 +96,7 @@
       {% element pages.current %}
     {% endif %}
     {% element 'footer' %}
+    {% element 'snippets/cookies_banner' %}
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -119,9 +125,8 @@
     {{ tray.scripts }}
     {% element 'snippets/modal' %}  
     {% element 'snippets/pageview' %} 
-    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
-    {% endspaceless %}
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}   
 
-    {% element 'snippets/cookies_banner' %}
+    {% endspaceless %}
   </body>
 </html>

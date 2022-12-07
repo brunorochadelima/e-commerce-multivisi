@@ -2,8 +2,8 @@ const btnHamburger = document.querySelector(".btnHamburger");
 const drawer = document.querySelector(".header-mobile-drawer");
 const btncloseDrawer = document.querySelector(".btncloseDrawer");
 
-btnHamburger.addEventListener("click", openDrawer);
-btncloseDrawer.addEventListener("click", closeDrawer);
+btnHamburger.addEventListener("click", openDrawer, {passive: true});
+btncloseDrawer.addEventListener("click", closeDrawer, {passive: true});
 btnHamburger.addEventListener("touchstart", openDrawer);
 btncloseDrawer.addEventListener("touchstart", closeDrawer);
 

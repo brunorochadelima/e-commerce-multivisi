@@ -61,17 +61,16 @@
       {% endif %}
 
       <p class="product__price">
-        R$
-        {{ product.minimum_price|currency }}
+        {{ "R$ " ~ product.minimum_price|currency }}
         <br/>
         <span>à vista no boleto, transferência bancária ou PIX</span>
       </p>
 
       <p>
-        <i class="bi bi-credit-card"></i> R$
-        {{ product.calculated_price|currency }}em
-        {{ product.payment_option_details[2].plots }}x de R$
-        {{ product.payment_option_details[2].value|currency }} sem juros no cartão de crédito
+        <i class="bi bi-credit-card"></i> 
+        {{ "R$ " ~ product.calculated_price|currency }} 
+        {{ "em " ~ product.payment_option_details[2].plots ~ "x"}} 
+        {{ "de R$ " ~ product.payment_option_details[2].value|currency ~ " sem juros no cartão de crédito"}} 
       </p>
 
       <form action="{{ links.cart_add ~ product.id }}" method="POST">
@@ -93,14 +92,14 @@
         <div>
           <div>
             <label class="product_qtd">
-              <b>Quantidade </b>
+              <span>Quantidade </span>
               <input id="quant" type="text" name="quant" value="1" maxlength="3" style="width: 80px"/>
             </label>
           </div>
 
           <div>
             <button class="product__buy" type="submit" value="Comprar agora" onclick="return validaSeSelecionouVariante()">
-              <i class="bi bi-cart2" style="font-size: 1.5rem"></i>
+              <i class="bi bi-cart2" style="font-size: 1.5rem;"></i>
               Comprar agora
             </button>
           </div>

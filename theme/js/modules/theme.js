@@ -42,7 +42,6 @@ function exibirBannerCookie() {
 // setTimeout(exibirBannerCookie, 4500);
 exibirBannerCookie();
 
-
 // Modal de categorias
 const modal = document.querySelector(".open_menu_categories");
 

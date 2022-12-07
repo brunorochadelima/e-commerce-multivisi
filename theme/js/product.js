@@ -24,8 +24,7 @@ function validaSeSelecionouVariante() {
   }
 }
 
-function calcularFrete() {
-  
+function calcularFrete() {  
   const productId = document.querySelector("#product-shipping");
   const dataProductId = productId.getAttribute("data-productId");
   const cep1 = document.querySelector("#cep").value;

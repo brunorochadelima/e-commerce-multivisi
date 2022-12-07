@@ -117,7 +117,7 @@
   &_qtd {
     input {
       padding: 0.5rem;
-      border-radius: 5px;
+      border-radius: 8px;
       border: 1px solid $dark600;
     }
   }
@@ -130,12 +130,16 @@
   }
 
   &__buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
     width: 300px;
     background-color: $bluePrimary;
     color: #fff;
     border: none;
     padding: 1.3rem;
-    border-radius: 12px;
+    border-radius: 1rem;
     margin: 0.5rem 0;
     text-transform: uppercase;
     font-weight: bold;
