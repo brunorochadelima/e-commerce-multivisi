@@ -4,11 +4,22 @@
 .board {
   max-width: 800px;
   margin: 0 auto;
-  background: none;
   color: $dark900;
 }
+
+/*remover imagens tray*/
 .topBorder,
+.topBorder,
+.leftCorner,
 .bottom,
+.container2,
+.container3,
+.bLeft,
+.bRight {
+  background: none;
+  border: none;
+}
+
 .Mapa {
   display: none;
 }

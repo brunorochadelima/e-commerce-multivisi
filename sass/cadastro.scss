@@ -48,6 +48,7 @@ h1 {
   margin-right: 60px;
   margin-bottom: 30px;
 }
+
 #frm2 .board fieldset:nth-of-type(2) {
   display: block;
   position: relative;
@@ -68,8 +69,13 @@ h1 {
 #CadastroAbas,
 #CadastroAbas li,
 #CadastroAbas li a,
-.topBorderm,
-.topBorder {
+.topBorder,
+.topBorder,
+.leftCorner,
+.bottom,
+.container2,
+.bLeft,
+.bRight {
   background: none;
   border: none;
 }
