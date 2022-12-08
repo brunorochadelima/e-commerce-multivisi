@@ -5,7 +5,9 @@ function getLoja(identificador) {
 
   const lojasNaoSelecionadas = document.querySelectorAll(`.loja`);
 
-  for (let index = 0; index < lojasNaoSelecionadas.length; index++) {
+  let arrayLojasNaoSelecionadas = lojasNaoSelecionadas.length;
+
+  for (let index = 0; index < arrayLojasNaoSelecionadas; index++) {
     if (lojasNaoSelecionadas[index] !== lojaSelecionada) {
       lojasNaoSelecionadas[index].classList.add("ocultar");
     }

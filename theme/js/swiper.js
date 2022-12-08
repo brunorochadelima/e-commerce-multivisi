@@ -1,4 +1,5 @@
 var swiper = new Swiper(".banner-home", {
+  effect: "slide",  
   preloadImages: false,
   lazy: {
     loadPrevNext: true
@@ -13,6 +14,7 @@ var swiper = new Swiper(".banner-home", {
   },
   pagination: {
     el: ".swiper-pagination",
+    clickable: true,
   },
   keyboard: true,
 });
