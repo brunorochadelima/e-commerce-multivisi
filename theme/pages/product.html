@@ -1,8 +1,7 @@
 {% element 'snippets/breadcrumb' %}
 
 <section class="container">
-  <div
-    class="product_container">
+  <div class="product_container">
     {# Slider fotos e vídeo do produto #}
     <div>
       <div class="swiper productSlider">
@@ -10,7 +9,7 @@
           {% for image in product.images %}
             <div class="swiper-slide">
               {% set lazyIndex = loop.index == 1 ? false : true %}
-              <img class="swiper-lazy" data-src="{{ image.full }}" alt="{{ product.name }}" width="700" height="700" loading="{{ lazyIndex ? 'lazy' : 'eager' }}"/>
+              <img class="swiper-lazy" data-src="{{ image.full }}" alt="{{ product.name }}" width="700" height="700" loading="{{ lazyIndex ? 'lazy' : 'eager' }}">
               <div class="swiper-lazy-preloader"></div>
             </div>
           {% endfor %}
@@ -27,7 +26,7 @@
         <div class="swiper-wrapper">
           {% for image in product.images %}
             <div class="swiper-slide">
-              <img src="{{ image.medium }}" alt="{{ product.name }}" width="90" height="90"/>
+              <img src="{{ image.medium }}" alt="{{ product.name }}" width="90" height="90">
             </div>
           {% endfor %}
 
@@ -38,7 +37,7 @@
       </div>
     </div>
 
-    {# Info de compra do produto #}
+    {# Informações de compra do produto #}
     <div class="product">
 
       <div class="prod-star" style="height: 20px">
@@ -54,16 +53,15 @@
       </p>
 
       {% if product.price_offer > 0 %}
-        <s>R$
-          {{ product.product_price|currency }}</s>
+        <s>{{ "R$" ~ product.product_price|currency }}</s>
         <span class="product__offer">-{{ ((product.price - product.payment_option_details[0].value) /
          product.price * 100)|number_format }}%</span>
       {% endif %}
 
       <p class="product__price">
-        {{ "R$ " ~ product.minimum_price|currency }}
+        <span>{{ "R$ " ~ product.minimum_price|currency }}</span>
         <br/>
-        <span>à vista no boleto, transferência bancária ou PIX</span>
+        à vista no boleto, transferência bancária ou PIX
       </p>
 
       <p>
@@ -121,7 +119,7 @@
   </div>
 </section>
 
-{# Descrição #}
+{# Descrição do produto #}
 <section class="container">
   <div class="product_description">
     <p class="product_description__title">
@@ -153,13 +151,3 @@
 {# <pre>
   {{ dump(productTabs.custom.content) }}
 </pre> #}
-
-{# {{ productHelper.shipping() }}
-{% include "https://www.multivisi.com.br/mvc/store/product/shipping/?loja=196157&simular=ok&cep1=38413&cep2=288&quantidade=1&id_produto=3619" %} #}
-
-{# {% file_get_contents("/mvc/store/product/shipping/?loja=196157&simular=ok&cep1=38413&cep2=288&quantidade=1&id_produto=3619") %} #}
-{#
-<pre>
-  {{ dump(product.variants) }}
-</pre>
-#}

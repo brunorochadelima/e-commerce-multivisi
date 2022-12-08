@@ -39,7 +39,6 @@ function exibirBannerCookie() {
     banner.style.right = "10px";
   }
 }
-// setTimeout(exibirBannerCookie, 4500);
 exibirBannerCookie();
 
 // Modal de categorias
@@ -49,5 +48,5 @@ function modalOverlay() {
   modal.classList.add("modal-overlay");
 }
 function exitModalOverlay() {
-  modal.classList.remove("modal-overlay")
+  modal.classList.remove("modal-overlay");
 }

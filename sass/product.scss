@@ -55,11 +55,14 @@
 .product {
   color: $dark900;
   padding: 0.8rem;
-  font-size: 1.125rem;
+  font-size: 1.125rem;  
   margin-bottom: 1rem;
 
   &__name {
     font-size: 2rem;
+    @media screen and (max-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 
   [data-availability="Imediata"],
@@ -81,16 +84,18 @@
   }
 
   &__price {
-    font-size: 2rem;
-    font-weight: bold;
-    color: $bluePrimary;
-    line-height: 90%;
-    margin: 0.3rem 0;
+    font-size: 1.125rem;
+    color: $dark900;
+    font-weight: normal;
+    margin-top: 0;    
 
     span {
-      font-size: 1.125rem;
-      color: $dark900;
-      font-weight: normal;
+      font-size: 2rem;
+      font-weight: bold;
+      color: $bluePrimary;
+      line-height: 90%;
+      margin: 0.5rem 0;
+      display: inline-block;
     }
   }
 
@@ -133,7 +138,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
+    gap: 0.5rem;
     width: 300px;
     background-color: $bluePrimary;
     color: #fff;

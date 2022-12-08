@@ -12,8 +12,8 @@
     {% spaceless %} 
     <!-- tray charset -->
     {{ html.charset() }}
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
 
     <!-- tray meta tags -->
     {{ tray.meta }}
@@ -29,35 +29,35 @@
     />
 
     <!-- Fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     {# Melhora LCP nos banners home #}
-    <link rel="preconnect" href="{{ banners.mobile.slides[0].image }}" />
-    <link rel="preconnect" href="{{ banners.home.slides[0].image }}" />
+    <link rel="preconnect" href="{{ banners.mobile.slides[0].image }}">
+    <link rel="preconnect" href="{{ banners.home.slides[0].image }}">
 
     {% if utils.is_mobile %}
-    <link rel="stylesheet" href="{{ asset('css/header-mobile.css')}}" />
+    <link rel="stylesheet" href="{{ asset('css/header-mobile.css')}}">
     {% else %}
-    <link rel="stylesheet" href="{{ asset('css/header.css')}}" />
+    <link rel="stylesheet" href="{{ asset('css/header.css')}}">
     {% endif %}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" type="text/css">
 
     {% if pages.current == 'home' %}
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}" type="text/css">
     {% endif %} 
     
     {% if pages.current in ['search', 'catalog'] %}
-    <link rel="stylesheet" href="{{ asset('css/search.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/search.css') }}" type="text/css">
     {% endif %} 
     
     {% if pages.current == 'product' %}
-    <link rel="stylesheet" href="{{ asset('css/product.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('css/product.css') }}" type="text/css">
     {% endif %}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
     {% if pages.current == 'showroom' %}
       <link rel="stylesheet" href="{{ asset('css/showroom.css')}}">
@@ -90,11 +90,13 @@
     {% element 'snippets/messages' %} 
     {{ googleTagManager.top(pages.current, tagManagerData) }}    
 
-    {% element 'header' %}     
-    {{ content_for_layout }}
-    {% if pages.current in ['showroom', 'politica-de-cookies', 'quem-somos', 'contact', ] %}      
-      {% element pages.current %}
-    {% endif %}
+    {% element 'header' %} 
+    <main> 
+      {{ content_for_layout }}
+      {% if pages.current in ['showroom', 'politica-de-cookies', 'quem-somos', 'contact', 'ajuda' ] %}      
+        {% element pages.current %}
+      {% endif %}
+    </main>   
     {% element 'footer' %}
     {% element 'snippets/cookies_banner' %}
 
@@ -103,7 +105,7 @@
     <script src="{{ asset('js/swiper.js')}}"></script>
 
     <!-- Rd Station -->
-    <script async type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/7afc2a8f-0433-42f5-b6a4-0ff4a44cc6a1-loader.js" defer></script>
+    <script async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/7afc2a8f-0433-42f5-b6a4-0ff4a44cc6a1-loader.js" defer></script>
 
     <!-- Página produto -->
     {% if pages.current == 'product' %}
