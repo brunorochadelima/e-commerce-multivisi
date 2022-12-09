@@ -4,17 +4,17 @@
      <span class="payment__close"><i class="bi bi-x-lg" style="font-size: 1.5rem; padding: .5rem;"></i></span>
       <h2>FORMAS DE PAGAMENTO</h2>
       <nav>
-        <span>
+        <span class="credit-title">
           <i class="bi bi-credit-card" style="font-size: 2.5rem"></i><br/>Cartão de crédito</span>
-        <span>
+        <span class="pix-title">
           <i class="bi bi-upc" style="font-size: 2.5rem"></i><br/>Pix</span>
-        <span>
+        <span class="boleto-title">
           <i class="bi bi-credit-card" style="font-size: 2.5rem"></i><br/>Boleto</span>
       </nav>
     </div>
 
     <section class="payment__itens">
-      <div id="cartao">
+      <div id="credit">
         <table class="payment__itens__credit">
           {% for i in 1..product.payment_option_details[2].plots %}
             {% set valorParcelado = (product.payment_option_details[2].plots *
@@ -31,9 +31,16 @@
         </table>
       </div>
 
-      <div id="pix">Pix item</div>
+      <div id="pix">
+        <span>{{ "R$ " ~ product.minimum_price|currency }}</span>
+        <p>À vista no Pix</p>
+        <p>Utilize a chave: 10.409.455/0001-19</p>
+      </div>
 
-      <div id="boleto">Boleto item</div>
+      <div id="boleto"> 
+        <span>{{ "R$ " ~ product.minimum_price|currency }}</span>
+        <p>À vista no boleto bancário</p>
+      </div>
     </section>
   </div>
 </div>

@@ -67,3 +67,47 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+// Alterna entre as abas de navegação do modal de formas de pagamento
+
+const pixTitle = document.querySelector(".pix-title");
+const pixItem = document.querySelector("#pix");
+
+const creditTitle = document.querySelector(".credit-title");
+const creditItem = document.querySelector("#credit");
+
+const boletoTitle = document.querySelector(".boleto-title");
+const boletoItem = document.querySelector("#boleto");
+
+pixTitle.onclick = function () {
+  pixItem.style.display = "block";
+  pixTitle.style.color = "#003CE5";
+
+  creditItem.style.display = "none";
+  creditTitle.style.color = "#94A3B8";
+
+  boletoItem.style.display = "none";
+  boletoTitle.style.color = "#94A3B8";
+};
+
+creditTitle.onclick = function () {
+  creditItem.style.display = "block";
+  creditTitle.style.color = "#003CE5";
+
+  pixItem.style.display = "none";
+  pixTitle.style.color = "#94A3B8";
+
+  boletoItem.style.display = "none";
+  boletoTitle.style.color = "#94A3B8";
+};
+
+boletoTitle.onclick = function () {
+  boletoItem.style.display = "block";
+  boletoTitle.style.color = "#003CE5";
+
+  pixItem.style.display = "none";
+  pixTitle.style.color = "#94A3B8";
+
+  creditItem.style.display = "none";
+  creditTitle.style.color = "#94A3B8";
+};
