@@ -1,0 +1,39 @@
+<div class="wrapper-payment">
+  <div class="payment">
+    <div>
+     <span class="payment__close"><i class="bi bi-x-lg" style="font-size: 1.5rem; padding: .5rem;"></i></span>
+      <h2>FORMAS DE PAGAMENTO</h2>
+      <nav>
+        <span>
+          <i class="bi bi-credit-card" style="font-size: 2.5rem"></i><br/>Cartão de crédito</span>
+        <span>
+          <i class="bi bi-upc" style="font-size: 2.5rem"></i><br/>Pix</span>
+        <span>
+          <i class="bi bi-credit-card" style="font-size: 2.5rem"></i><br/>Boleto</span>
+      </nav>
+    </div>
+
+    <section class="payment__itens">
+      <div id="cartao">
+        <table class="payment__itens__credit">
+          {% for i in 1..product.payment_option_details[2].plots %}
+            {% set valorParcelado = (product.payment_option_details[2].plots *
+            product.payment_option_details[2].value / i) %}
+            <tr>
+              <td>
+                {{ i }}x de R$ {{ valorParcelado|currency }} sem juros
+              </td>
+              <td>
+                Total: {{ product.current_price|currency }}
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div id="pix">Pix item</div>
+
+      <div id="boleto">Boleto item</div>
+    </section>
+  </div>
+</div>

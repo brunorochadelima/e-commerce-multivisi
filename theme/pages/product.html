@@ -1,5 +1,12 @@
 {% element 'snippets/breadcrumb' %}
 
+
+{% element 'snippets/modal-payment-methods' %}
+
+{# <pre>
+  {{ dump(product) }}
+</pre> #}
+
 <section class="container">
   <div class="product_container">
     {# Slider fotos e vídeo do produto #}
@@ -53,7 +60,7 @@
       </p>
 
       {% if product.price_offer > 0 %}
-        <s>{{ "R$" ~ product.product_price|currency }}</s>
+        <s>{{ "R$ " ~ product.product_price|currency }}</s>
         <span class="product__offer">-{{ ((product.price - product.payment_option_details[0].value) /
          product.price * 100)|number_format }}%</span>
       {% endif %}

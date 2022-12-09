@@ -84,10 +84,10 @@ a {
   }
 }
 
-nav {
+.nav {
   background: $blueSecondary;
   color: $bluePrimary;
-  a {
+  .categories_destaques a {
     color: $bluePrimary;
   }
 }
