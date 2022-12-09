@@ -99,6 +99,12 @@
     }
   }
 
+  &__modal-payment {
+    color: $bluePrimary;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   &__variant_title {
     font-size: 1.3rem;
     font-weight: bold;
