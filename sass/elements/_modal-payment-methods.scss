@@ -35,12 +35,13 @@
   nav {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
 
     span {
       max-width: 100px;
       margin-top: 1rem;
       text-align: center;
-      color: #94A3B8;
+      color: #94a3b8;
     }
   }
 
@@ -48,28 +49,48 @@
     display: flex;
     min-width: 100%;
     justify-content: center;
-  }
 
-  &__itens__credit {
-    border-collapse: collapse;
-    margin-top: 0.8rem;
+    #credit table {
+      border-collapse: collapse;
+      margin-top: 0.8rem;
 
-    tr,
-    td {
-      padding: 8px 16px;
+      tr,
+      td {
+        padding: 8px 16px;
+      }
+
+      tr:nth-child(odd) {
+        background-color: #e2e8f0;
+      }
+
+      @media only screen and (max-width: 600px) {
+       font-size: 0.87rem;
+      }
+
     }
 
-    tr:nth-child(odd) {
-      background-color: #e2e8f0;
+    #pix,
+    #boleto {
+      text-align: center;
+
+      .pix__value,
+      .boleto__value {
+        color: $bluePrimary;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      p {
+        margin-top: 0;
+      }
     }
   }
 
   @media only screen and (max-width: 600px) {
-    width: 90%;
+    width: 98%;
     padding: 1rem;
   }
 }
-
 
 #pix,
 #boleto {

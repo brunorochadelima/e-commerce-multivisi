@@ -15,7 +15,7 @@
 
     <section class="payment__itens">
       <div id="credit">
-        <table class="payment__itens__credit">
+        <table>
           {% for i in 1..product.payment_option_details[2].plots %}
             {% set valorParcelado = (product.payment_option_details[2].plots *
             product.payment_option_details[2].value / i) %}
@@ -32,13 +32,13 @@
       </div>
 
       <div id="pix">
-        <span>{{ "R$ " ~ product.minimum_price|currency }}</span>
+        <span class="pix__value">{{ "R$ " ~ product.minimum_price|currency }}</span>
         <p>À vista no Pix</p>
         <p>Utilize a chave: 10.409.455/0001-19</p>
       </div>
 
       <div id="boleto"> 
-        <span>{{ "R$ " ~ product.minimum_price|currency }}</span>
+        <span class="boleto__value">{{ "R$ " ~ product.minimum_price|currency }}</span>
         <p>À vista no boleto bancário</p>
       </div>
     </section>
