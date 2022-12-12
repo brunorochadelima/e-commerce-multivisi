@@ -1,6 +1,5 @@
 {% element 'snippets/breadcrumb' %}
 
-
 {% element 'snippets/modal-payment-methods' %}
 
 {# <pre>
@@ -51,6 +50,10 @@
         <div id="yv-review-quickreview"></div>
       </div>
       {# {% element 'snippets/star_ranking' { review: product.ranking } %} #}
+
+      {% if product.available == 0 %}
+        <p style="font-weight: bold; color: red">PRODUTO INDISPONÍVEL</p>
+      {% endif %}
 
       <h1 class="product__name">{{ product.name }}</h1>
 

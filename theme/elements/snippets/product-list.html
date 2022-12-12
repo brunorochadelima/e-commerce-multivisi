@@ -6,7 +6,7 @@
 
 <div class="container-card-products">
   {% for item in products %}
-    {% element 'snippets/product' {'product' : item} %}
+    {% element 'snippets/product' {'product' : item, 'loading': "lazy"} %}
   {% endfor %}
 </div>
 
