@@ -95,7 +95,9 @@
       {% endif %}
     </main>   
     {% element 'footer' %}
-    {% element 'snippets/cookies_banner' %}
+    {% if pages.current != 'product' %}
+      {% element 'snippets/cookies_banner' %}      
+    {% endif %}     
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -106,7 +108,7 @@
 
     <!-- Página produto -->
     {% if pages.current == 'product' %}
-      <script async src="{{ asset('js/product.js')}}"></script>
+      <script src="{{ asset('js/product.js')}}"></script>
     {% endif %} 
      
     <!-- Menu mobile -->
@@ -118,7 +120,7 @@
       <script async src="{{ asset('js/showroom.js')}}"></script> 
     {% endif %}  
 
-    <script async src="{{ asset('js/modules/theme.js')}}"></script>
+    <script src="{{ asset('js/modules/theme.js')}}"></script>
 
     <!-- default tray -->
     {{ tray.scripts }}
