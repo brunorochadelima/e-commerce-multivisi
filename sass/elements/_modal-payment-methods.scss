@@ -19,6 +19,16 @@
   background: #fff;
   border-radius: 1rem;
   padding: 2rem;
+  animation: animar .2s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  @keyframes animar {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
 
   &__close {
     position: absolute;
