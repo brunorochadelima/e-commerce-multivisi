@@ -55,6 +55,7 @@ var swiper = new Swiper(".thumbsSlider", {
 
 var swiper2 = new Swiper(".productSlider", {
   preloadImages: false,
+  initialSlide: 1,
   lazy: {
     loadPrevNext: true
   },

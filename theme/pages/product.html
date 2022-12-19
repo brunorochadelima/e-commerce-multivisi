@@ -14,7 +14,7 @@
         <div class="swiper-wrapper">
           {% if product.video %}
               <div class="swiper-slide">
-                <iframe class="swiper-lazy" data-src="{{ product.video }}" frameborder="0" width="100%" height="500" allowfullscreen></iframe>
+                <iframe class="swiper-lazy" data-src="{{ product.video }}" loading="lazy" frameborder="0" width="100%" height="500" allowfullscreen></iframe>
               </div>
           {% endif %}
           {% for image in product.images %}

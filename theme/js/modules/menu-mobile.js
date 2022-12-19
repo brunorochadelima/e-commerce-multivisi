@@ -4,8 +4,8 @@ const btncloseDrawer = document.querySelector(".btncloseDrawer");
 
 btnHamburger.addEventListener("click", openDrawer, {passive: true});
 btncloseDrawer.addEventListener("click", closeDrawer, {passive: true});
-btnHamburger.addEventListener("touchstart", openDrawer);
-btncloseDrawer.addEventListener("touchstart", closeDrawer);
+btnHamburger.addEventListener("touchstart", openDrawer, {passive: true});
+btncloseDrawer.addEventListener("touchstart", closeDrawer, {passive: true});
 
 function openDrawer(event) {
   if (event.type === "touchstart") event.preventDefault();
