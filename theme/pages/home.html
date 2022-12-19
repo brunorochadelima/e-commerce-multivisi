@@ -3,16 +3,23 @@
 <section class="container">{% element 'snippets/categories-bar' %}</section>
 
 <section class="container">
-  {% set destaques = Products({ 'filter': 'featured', 'limit': 4, 'order':
-  {'quantity_sold': 'desc'}, }) %}
-  {% element 'snippets/product-list'
-  {'products': destaques, 'titleCategory': 'Os mais queridos', 'link' :
+  {% set destaques = Products({ 
+    'filter': 'featured', 
+    'limit': 4, 
+    'order': {
+      'quantity_sold': 'desc'},
+  }) %}
+  {% element 'snippets/product-list' {'products': destaques, 'titleCategory': 'Os mais queridos', 'link' :
   links.search_featured } %}
 </section>
 
 <section class="container">
-  {% set novidades = Products({ 'filter': 'new', 'limit': 4, 'order':
-  {'quantity_sold': 'desc'}, }) %}
+  {% set novidades = Products({ 
+    'filter': 'new', 
+    'limit': 4, 
+    'order': {
+      'price': 'desc'}, 
+  }) %}
   {% element 'snippets/product-list'
   {'products': novidades, 'titleCategory': 'Acabaram de chegar', 'link' :
   links.search_order_new} %}
@@ -32,8 +39,13 @@
 </section>
 
 <section class="container">
-  {% set promocoes = Products({ 'filter': 'promotion', 'limit': 4, 'order':
-  {'quantity_sold': 'desc'}, }) %}
+  {% set promocoes = Products({ 
+    'filter': 'promotion', 
+    'limit': 4, 
+    'order': {
+      'quantity_sold': 'desc',
+      'price_offer': 'desc'}, 
+  }) %}
   {% element 'snippets/product-list'
   {'products': promocoes, 'titleCategory': 'Multi Ofertas', 'link' :
   links.search_offer } %}
