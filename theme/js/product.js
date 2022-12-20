@@ -27,11 +27,11 @@ function validaSeSelecionouVariante() {
 function calcularFrete() {
   const productId = document.querySelector("#product-shipping");
   const dataProductId = productId.getAttribute("data-productId");
-  const cep1 = document.querySelector("#cep").value;
-  const cep2 = document.querySelector("#cep2").value;
+  const cep1 = document.querySelector("#cep1");
+  const cep2 = document.querySelector("#cep2");
   const quant = document.querySelector("#quant").value;
   const shippingResult = document.querySelector(".shipping-result");
-  const url = `https://www.multivisi.com.br/mvc/store/product/shipping/?loja=196157&simular=ok&cep1=${cep1}&cep2=${cep2}&quantidade=${quant}&id_produto=${dataProductId}`;
+  const url = `https://www.multivisi.com.br/mvc/store/product/shipping/?loja=196157&simular=ok&cep1=${cep1.value}&cep2=${cep2.value}&quantidade=${quant}&id_produto=${dataProductId}`;
 
   shippingResult.textContent = "Carregando fretes...";
 
@@ -47,6 +47,13 @@ function calcularFrete() {
     })
     .catch((err) => console.log(err));
 }
+
+// foca no cep 2 ao terminar digitar o cep 1
+cep1.addEventListener("input", function () {
+  if (cep1.value.length === 5) {
+    cep2.focus();
+  }
+});
 
 // Modal formas de pagamento
 const modal = document.querySelector(".wrapper-payment");
