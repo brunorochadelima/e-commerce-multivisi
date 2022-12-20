@@ -68,7 +68,7 @@ btnCloseModal.onclick = function () {
   modal.style.display = "none";
 };
 
-// When the user clicks anywhere outside of the modal, close it
+// Quando o usuário clicar em qualquer lugar fora do modal, feche-o
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
