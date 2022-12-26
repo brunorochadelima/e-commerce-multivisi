@@ -60,13 +60,13 @@
 
 //Titulo categorias
 .title-categories {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: $dark900;
   font-weight: bold;
 
   a {
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: $bluePrimary;
     margin-left: 0.5rem;
   }
@@ -74,11 +74,11 @@
 
 //Banners
 .banners-home {
-  display: flex;  
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1.5rem; 
+  margin-top: 1.5rem;
 
   img {
     display: block;
@@ -150,5 +150,11 @@
         margin: 8px;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .title-categories {
+    font-size: 1.8rem;
   }
 }
