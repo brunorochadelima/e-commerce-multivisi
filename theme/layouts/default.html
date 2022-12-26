@@ -60,7 +60,7 @@
     {% endif %}     
 
     {# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"> #}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" media="print" onload="this.media='all'">
 
     {% if pages.current == 'showroom' %}
       <link rel="stylesheet" href="{{ asset('css/showroom.css')}}">
@@ -78,7 +78,9 @@
        <link rel="stylesheet" href="{{ asset('css/cadastro.css')}}">
     {% endif %}
        
-   <link rel="stylesheet" href="{{ asset('css/footer.css') }}"> 
+   {# <link rel="stylesheet" href="{{ asset('css/footer.css') }}"> #}
+   <link rel="stylesheet" href="{{ asset('css/footer.css') }}" media="print" onload="this.media='all'">
+ 
     {{ tray.analytics }}    
     {{ googleTagManager.header(pages.current, tagManagerData) }}
     {% endspaceless %}
@@ -115,18 +117,18 @@
      
     <!-- Menu mobile -->
     {% if utils.is_mobile %}
-      <script async src="{{ asset('js/modules/menu-mobile.js')}}"></script>
+      <script src="{{ asset('js/modules/menu-mobile.js')}}"></script>
     {% endif %}   
 
     {% if pages.current == 'showroom' %}
-      <script async src="{{ asset('js/showroom.js')}}"></script> 
+      <script src="{{ asset('js/showroom.js')}}"></script> 
     {% endif %}  
 
     <script src="{{ asset('js/modules/theme.js')}}"></script>
 
     <!-- default tray -->
-    {{ tray.scripts }}
     {% element 'snippets/modal' %}  
+    {{ tray.scripts }}
     {% element 'snippets/pageview' %} 
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}   
 
