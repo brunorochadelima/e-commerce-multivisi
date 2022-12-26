@@ -18,10 +18,7 @@
     <!-- tray meta tags -->
     {{ tray.meta }}
     
-    <!-- tray styles -->
-    {{ tray.styles }} 
-
-    <!-- Reset -->
+     <!-- Reset -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -77,8 +74,11 @@
     {% if pages.current == 'register' %}
        <link rel="stylesheet" href="{{ asset('css/cadastro.css')}}">
     {% endif %}
-       
-   {# <link rel="stylesheet" href="{{ asset('css/footer.css') }}"> #}
+
+    <!-- tray styles -->
+    {{ tray.styles }} 
+          
+   <!-- Css assíncrono -->
    <link rel="stylesheet" href="{{ asset('css/footer.css') }}" media="print" onload="this.media='all'">
  
     {{ tray.analytics }}    
