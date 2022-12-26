@@ -1,8 +1,6 @@
 {# <pre>
   {{ dump(search) }}
 </pre> #}
-{% element 'snippets/breadcrumb' %}
-
 <div class="container">
   {% if search.word %}
     <br/>
@@ -33,9 +31,10 @@
 
 {% if products|length > 0 %}
   <div class="container grid-card-products">
-    {% for product in products %}
+    {% for item in products %}
+    {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %} 
       <div>
-        {% element 'snippets/product' {"product": product} %}
+        {% element 'snippets/product' { product: item, loading : lazyIndex} %}
       </div>
     {% endfor %}
   </div>

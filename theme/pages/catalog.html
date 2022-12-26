@@ -23,9 +23,12 @@
 {% if products|length > 0 %}
   <div class="container grid-card-products">
     {% for item in products %}
-      <div>{% element 'snippets/product' { product : item, loading : "lazy" } %}</div>
+       {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %}    
+       <div>{% element 'snippets/product' { product : item, loading : lazyIndex } %}</div>
     {% endfor %}
   </div>
 {% endif %}
-{% element ('snippets/pagination') %}        
+{% element ('snippets/pagination') %} 
+
+
      
