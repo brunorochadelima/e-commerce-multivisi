@@ -1,6 +1,10 @@
 @import "base", "./elements/card-product", "./elements/star-ranking",
   "./elements/pagination", "./elements/breadcrumb";
 
+#ProdBlock {
+  display: none;  
+}
+
 .grid-card-products {
   display: flex;
   flex-wrap: wrap;
