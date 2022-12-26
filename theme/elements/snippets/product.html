@@ -5,7 +5,7 @@
     product.price * 100)|number_format}}%</span>
   {% endif %}
 
-  <img src="{{product.images[0]['large']}}" alt="{{ product.name }}" width="180" height="180" loading="{{ loading }}">
+  <img src="{{product.images[0]['large']}}" alt="{{ product.name }}" width="180" height="180"  loading="{{ loading ? loading : "auto" }}"   decoding="async">
   {# {% element 'snippets/star_ranking' { 'review': product.ranking } %} #}
   
   <p class="card-product__name">{{ product.name|slice(0, 45) }}...</p>

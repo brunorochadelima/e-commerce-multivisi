@@ -22,9 +22,10 @@
 
 {% if products|length > 0 %}
   <div class="container grid-card-products">
-    {% for product in products %}
-      <div>{% element 'snippets/product' {"product": product} %}</div>
+    {% for item in products %}
+      <div>{% element 'snippets/product' { product : item, loading : "lazy" } %}</div>
     {% endfor %}
   </div>
 {% endif %}
-{% element ('snippets/pagination') %}
+{% element ('snippets/pagination') %}        
+     
