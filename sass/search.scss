@@ -9,14 +9,14 @@
 }
 
 .search-word {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: $dark900;
 }
 
 .filter-order {
   margin: 1rem 0;
 
-  &__order_options {
+  &__order_options-title {
     font-size: 1rem;
     color: $dark900;
     margin: 0.5rem 0;
@@ -24,6 +24,6 @@
 
   select {
     padding: 0.8rem;
-    border-radius: 10px;
+    border-radius: 8px;
   }
 }
