@@ -18,7 +18,7 @@
 }
 
 .swiper-wrapper a {
-  text-decoration: none;  
+  text-decoration: none;
 }
 
 // Carrosel de categorias
@@ -72,16 +72,19 @@
   }
 }
 
-//Banners
 .banners-home {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   margin-top: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 
   img {
-    display: block;
+    border-radius: 8px;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
   }
 }
 
