@@ -1,16 +1,16 @@
 //Card de produto
 
-.card-product {
-  display: inline-block;
+.card-product {  
   text-decoration: none;
   position: relative;
   background-color: #ffffff; 
-  min-width: 230px;
-  max-width: 317px;
-  min-height: 400px;
-
   padding: 20px;
   border-radius: 1rem;
+  flex-basis: 270px; 
+  flex-grow: 1;
+  min-width: 220px;
+  max-width: 335px;
+
 
   img {
     max-inline-size: 100%;

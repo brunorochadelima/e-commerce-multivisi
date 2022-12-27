@@ -6,9 +6,10 @@
 }
 
 .grid-card-products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));  
+  display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .search-word {

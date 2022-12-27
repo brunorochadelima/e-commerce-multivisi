@@ -33,9 +33,7 @@
   <div class="container grid-card-products">
     {% for item in products %}
     {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %} 
-      <div>
         {% element 'snippets/product' { product: item, loading : lazyIndex} %}
-      </div>
     {% endfor %}
   </div>
 {% endif %}
