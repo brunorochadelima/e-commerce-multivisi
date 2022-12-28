@@ -12,7 +12,7 @@
 
        {# Filtro Por categoria #}
        {% if filters.categories %}
-        <section class="filter__block filter__block--categories">
+        <section class="filter__block">
             <h4 class="filter__title">Categorias</h4>
             <ul class="filter__list">
                 {% for category in filters.categories.items %}
@@ -31,7 +31,7 @@
 
         {# Filtro Marcas #}
         {% if filters.brands %}
-        <section class="filter__block filter__block--categories">
+        <section class="filter__block">
             <h4 class="filter__title">Marcas</h4>
             <ul class="filter__list">
                 {% for brand in filters.brands.items %}
@@ -50,7 +50,7 @@
 
         {# Filtro Faixa de preços #}
         {% if filters.prices %}
-        <section class="filter__block filter__block--prices">
+        <section class="filter__block">
             <h4 class="filter__title">Faixa de Preços</h4>
             <ul class="filter__list">
                 {% for price in filters.prices.items %}
