@@ -6,10 +6,10 @@
 }
 
 .grid-card-products {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
 }
 
 .search-word {
@@ -32,10 +32,16 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
+  .grid-card-products {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 
+@media screen and (min-width: 1024px) {
   @import "./elements/smart-filtes";
 
+  // Barra lateral de filtros
   .wrapper-filters-products {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -49,5 +55,10 @@
   .grid-card-products {
     grid-column: 3 / span 12;
   }
+}
 
+@media screen and (min-width: 1441px) {
+  .grid-card-products {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

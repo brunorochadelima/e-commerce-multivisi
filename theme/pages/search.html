@@ -41,7 +41,7 @@
 {% if utils.is_mobile %}
 
     {% if products|length > 0 %}
-        <div class="container grid-card-products">            
+        <div class="container">            
             <div class="grid-card-products">
                 {% for item in products %}
                     {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %}
