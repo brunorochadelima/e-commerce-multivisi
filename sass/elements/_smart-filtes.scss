@@ -1,0 +1,39 @@
+.filter {
+  color: $dark900;
+
+  &__form {
+    background: #fff;
+    padding: 8px;
+    border-radius: 1rem;
+  }
+
+  &__form__title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  &__list {
+    padding-left: 8px;
+
+    li {
+      list-style: none;
+      margin-bottom: 0.5rem;
+      font-size: 0.87rem;
+      display: flex;
+    }
+
+    input {
+      margin-inline-end: 0.5rem;
+    }
+  }
+
+  .filter__text--count {
+    margin-inline: 8px;
+    color: #999999;
+  }
+}

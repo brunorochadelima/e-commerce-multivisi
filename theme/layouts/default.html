@@ -100,9 +100,6 @@
       {% endif %}
     </main>   
     {% element 'footer' %}
-    {% if pages.current != 'product' %}
-      {% element 'snippets/cookies_banner' %}      
-    {% endif %}     
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -127,12 +124,18 @@
 
     <script src="{{ asset('js/modules/theme.js')}}"></script>
 
+    {% endspaceless %}
     <!-- default tray -->
     {% element 'snippets/modal' %}  
     {{ tray.scripts }}
     {% element 'snippets/pageview' %} 
-    {{ googleTagManager.bottom(pages.current, tagManagerData) }}   
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }} 
 
-    {% endspaceless %}
+   {{ html.script({
+    '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
+    '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
+    })
+   }}
+
   </body>
 </html>

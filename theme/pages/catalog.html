@@ -1,34 +1,62 @@
 {% element 'snippets/breadcrumb' %}
 
-<div class="container">
-  <form name="form-filter" method="get" data-form="filter" class="filter-order">
-    <input type="hidden" name="loja" value="{{ store.id }}"/>
+{# <pre>
+  {{ dump(filtered_options) }}
+</pre>
+<pre>
+  {{ dump(filters) }}
+</pre> #}
+
+<div class="container"> <form name="form-filter" method="get" data-form="filter" class="filter-order">
+  <input type="hidden" name="loja" value="{{ store.id }}"/>
 
     {% if search.word %}
-      <input name="palavra_busca" type="hidden" value="{{ search.word }}"/>
+        <input name="palavra_busca" type="hidden" value="{{ search.word }}"/>
     {% endif %}
+
     {% if search.order_options %}
-      <h3 class="filter-order__order_options-title">
-        <i class="bi bi-funnel"></i>
-        Ordenar por:</h3>
-      <select name="order" onchange="this.form.submit()">
-        {% for option in search.order_options %}
-          <option value="{{ option.value }}">{{ option.name }}</option>
-        {% endfor %}
-      </select>
+        <h3 class="filter-order__order_options-title">
+            <i class="bi bi-funnel"></i>
+            Ordenar por:</h3>
+        <select name="order" onchange="this.form.submit()">
+            {% for option in search.order_options %}
+                <option value="{{ option.value }}">{{ option.name }}</option>
+            {% endfor %}
+        </select>
     {% endif %}
-  </form>
+    </form>
 </div>
 
-{% if products|length > 0 %}
-  <div class="container grid-card-products">
-    {% for item in products %}
-       {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %}    
-       {% element 'snippets/product' { product : item, loading : lazyIndex } %}
-    {% endfor %}
-  </div>
+{% if utils.is_mobile %}
+
+    {% if products|length > 0 %}
+        <div class="container grid-card-products">            
+            <div class="grid-card-products">
+                {% for item in products %}
+                    {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %}
+                    {% element 'snippets/product' { product : item, loading : lazyIndex } %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+{% else %}
+
+    {% if products|length > 0 %}
+        <div class="container">
+            <div class="wrapper-filters-products">
+                {% element 'snippets/smart-filter' %}
+                <div class="grid-card-products">
+                    {% for item in products %}
+                        {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %}
+                        {% element 'snippets/product' { product : item, loading : lazyIndex } %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
 {% endif %}
-{% element ('snippets/pagination') %} 
 
 
-     
+{% element ('snippets/pagination') %}

@@ -2,7 +2,7 @@
   "./elements/pagination", "./elements/breadcrumb";
 
 #ProdBlock {
-  display: none;  
+  display: none;
 }
 
 .grid-card-products {
@@ -30,4 +30,24 @@
     padding: 0.8rem;
     border-radius: 8px;
   }
+}
+
+@media screen and (min-width: 768px) {
+
+  @import "./elements/smart-filtes";
+
+  .wrapper-filters-products {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+
+  .filter {
+    grid-column: 1 / span 2;
+  }
+
+  .grid-card-products {
+    grid-column: 3 / span 12;
+  }
+
 }

@@ -32,3 +32,16 @@
     font-weight: bold;
   }
 }
+
+@media screen and(min-width: 768px) {
+  .paginate-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .search-counter {
+    grid-column: 3 / span 12;
+  }
+  .paginate-links {
+    grid-column: 3 / span 12;
+  }
+}
