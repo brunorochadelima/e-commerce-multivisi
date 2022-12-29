@@ -40,7 +40,9 @@
 
 @media only screen and (max-width: 600px) {
   .categories-bar > .swiper-button-next,
-  .categories-bar > .swiper-button-prev {
+  .categories-bar > .swiper-button-prev,
+  .banner-home > .swiper-button-next,
+  .banner-home > .swiper-button-prev {
     visibility: hidden;
   }
 }
@@ -59,6 +61,7 @@
 }
 
 //Titulo categorias
+
 .title-categories {
   font-size: 1.2rem;
   color: $dark900;
@@ -72,11 +75,11 @@
   }
 }
 
-.banners-home {
+.banners-inferior {
   display: flex;
   justify-content: space-between;
   margin-top: 1.5rem;
-  gap: 1rem;
+  gap: .5rem;
   flex-wrap: wrap;
 
   img {
