@@ -1,18 +1,20 @@
-<div class="container">
-  <div class="breadcrumb">
-    {% if breadcrumb %}
-      <span class="breadcrumb__item"><b>Você está em: &nbsp</b></span>
-      {% for item in breadcrumb %}
-        <span class="breadcrumb__item">
-          <a href="{{ item.link }}" title="{{ item.name }}">{{ item.name }}</a>
-        </span>
-        <span class="breadcrumb__icon">
-          <i class="bi bi-chevron-right"></i>
-        </span>
-      {% endfor %}
-      <span class="breadcrumb__item">
-        {{ pages.current == 'product' ? product.name : category.name }}
-      </span>
-    {% endif %}
-  </div>
-</div>
+{% if breadcrumb %}
+    <div class="container">
+        <div class="breadcrumb">
+            <span class="breadcrumb__item">
+                <b>Você está em: &nbsp</b>
+            </span>
+            {% for item in breadcrumb %}
+                <span class="breadcrumb__item">
+                    <a href="{{ item.link }}" title="{{ item.name }}">{{ item.name }}</a>
+                </span>
+                <span class="breadcrumb__icon">
+                    <i class="bi bi-chevron-right"></i>
+                </span>
+            {% endfor %}
+            <span class="breadcrumb__item">
+                {{ pages.current == 'product' ? product.name : category.name }}
+            </span>
+        </div>
+    </div>
+{% endif %}

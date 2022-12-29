@@ -29,12 +29,18 @@
   select {
     padding: 0.8rem;
     border-radius: 8px;
+    border: 1px solid #d3d3d3;
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 600px) {
   .grid-card-products {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .filter-order select {
+    width: fit-content;
   }
 }
 
