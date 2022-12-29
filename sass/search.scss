@@ -5,6 +5,19 @@
   display: none;
 }
 
+.catalog-top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title-category {
+    font-size: 1.2rem;
+    padding: .5rem 0;
+    color: $dark600;
+  }
+}
+
 .grid-card-products {
   display: grid;
   grid-template-columns: 1fr;
@@ -18,6 +31,10 @@
 }
 
 .filter-order {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;  
+  gap: 0.5rem;
   margin: 1rem 0;
 
   &__order_options-title {
@@ -46,6 +63,15 @@
 
 @media screen and (min-width: 1024px) {
   @import "./elements/smart-filtes";
+
+  .catalog-top-bar {
+    justify-content: space-between;
+    border-top: 1px solid #d3d3d3;
+
+    &__title-category {
+      font-size: 1.5rem;
+    }
+  }
 
   // Barra lateral de filtros
   .wrapper-filters-products {

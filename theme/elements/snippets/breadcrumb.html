@@ -1,9 +1,9 @@
 {% if breadcrumb %}
     <div class="container">
         <div class="breadcrumb">
-            <span class="breadcrumb__item">
+            {# <span class="breadcrumb__item">
                 <b>Você está em: &nbsp</b>
-            </span>
+            </span> #}
             {% for item in breadcrumb %}
                 <span class="breadcrumb__item">
                     <a href="{{ item.link }}" title="{{ item.name }}">{{ item.name }}</a>
