@@ -57,7 +57,7 @@
                     {% set price_applied = price.from and price.to in filtered_options.prices ? true : false %}
                     <li>
                         <input id="{{ price.from }}-{{ price.to }}" type="checkbox" name="prices[]" value="{{ price.from }},{{ price.to }}" {{ price_applied ? 'checked' }} onchange="this.form.submit()">
-                        <label for="{{ price.title }}">
+                        <label for="{{ price.from }}-{{ price.to }}">
                             <span>{{ price.title }}</span>
                         </label>
                     </li>                
