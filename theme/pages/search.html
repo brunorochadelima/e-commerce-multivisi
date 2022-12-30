@@ -59,7 +59,7 @@
                 {% element 'snippets/smart-filter' %}
                 <div class="grid-card-products">
                     {% for item in products %}
-                        {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %}
+                        {% set lazyIndex = loop.index < 5 ? "eager" : "lazy" %}
                         {% element 'snippets/product' { product : item, loading : lazyIndex } %}
                     {% endfor %}
                 </div>

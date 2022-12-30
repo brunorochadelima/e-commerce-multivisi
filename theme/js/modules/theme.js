@@ -42,11 +42,13 @@ function exibirBannerCookie() {
 exibirBannerCookie();
 
 // Modal de categorias
-const modal = document.querySelector(".open_menu_categories");
 
 function modalOverlay() {
+  const modal = document.querySelector(".open_menu_categories");
   modal.classList.add("modal-overlay");
 }
+
 function exitModalOverlay() {
+  const modal = document.querySelector(".open_menu_categories");
   modal.classList.remove("modal-overlay");
 }
