@@ -29,11 +29,11 @@
 {# Banners inferior #}
 <section class="container">
   <div class="banners-inferior">
-    <a href="#">
-      {{ banner.extra3 }}
+    <a href="{{ banners.extra3.link }}">
+     <img src="{{ banners.extra3.src }}" alt="{{ banners.extra3.alt }}" width="{{ banners.extra3.width }}" height="{{ banners.extra3.height }}" loading="lazy">
     </a>
-    <a href="#">
-      {{ banner.extra4 }}
+    <a href="{{ banners.extra4.link }}">
+     <img src="{{ banners.extra4.src }}" alt="{{ banners.extra4.alt }}" width="{{ banners.extra4.width }}" height="{{ banners.extra4.height }}" loading="lazy">
     </a>
   </div>
 </section>
@@ -55,3 +55,4 @@
 <section class="form-rd-station">{% element 'snippets/get-lead' %}</section>
 
 {% element 'snippets/cookies_banner' %}
+
