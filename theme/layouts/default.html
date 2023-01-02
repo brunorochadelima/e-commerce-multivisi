@@ -39,8 +39,10 @@
       <link rel="stylesheet" href="{{ asset('css/header.css')}}">
     {% endif %}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" type="text/css">
-
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" integrity="sha512-okkLcBJE+U19Dpd0QdHA1wn4YY6rW3CwaxeLJT3Jmj9ZcNSbln/VYw8UdqXRIwLX7J8PmtHs0I/FPAhozFvXKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     {% if pages.current == 'home' %}
       {# Melhora LCP nos banners home #}
       <link rel="preconnect" href="{{ banners.mobile.slides[0].image }}">
@@ -101,10 +103,10 @@
     {% element 'footer' %}
 
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js" integrity="sha512-wdUM0BxMyMC/Yem1RWDiIiXA6ssXMoxypihVEwxDc+ftznGeRu4s9Fmxl8PthpxOh5CQ0eqjqw1Q8ScgNA1moQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Rd Station -->
-    <script async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/7afc2a8f-0433-42f5-b6a4-0ff4a44cc6a1-loader.js"></script>
+    <script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/7afc2a8f-0433-42f5-b6a4-0ff4a44cc6a1-loader.js" defer></script>
 
     <!-- Página produto -->
     {% if pages.current == 'product' %}
@@ -120,7 +122,7 @@
       <script src="{{ asset('js/showroom.js')}}"></script> 
     {% endif %}  
 
-    <script async src="{{ asset('js/theme.min.js')}}"></script>
+    <script src="{{ asset('js/theme.min.js')}}" async></script>
     
     {% endspaceless %}
     <!-- default tray -->
@@ -134,6 +136,6 @@
     })
    }}
    {{ store.chat }}
-   <script async src="https://integrazap.com.br/gadget-v.1/wapp-flutuante.js?x=04326a705a81220e2d8795fa87a7576d&y=214160155440&z=multivisi.com.br"></script>
+   <script src="https://integrazap.com.br/gadget-v.1/wapp-flutuante.js?x=04326a705a81220e2d8795fa87a7576d&y=214160155440&z=multivisi.com.br" async></script>
   </body>
 </html>
