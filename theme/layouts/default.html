@@ -120,7 +120,7 @@
       <script src="{{ asset('js/showroom.js')}}"></script> 
     {% endif %}  
 
-    <script src="{{ asset('js/theme.min.js')}}"></script>
+    <script async src="{{ asset('js/theme.min.js')}}"></script>
     
     {% endspaceless %}
     <!-- default tray -->
@@ -131,7 +131,6 @@
 
    {{ html.script({
     '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
-    '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
     })
    }}
    {{ store.chat }}
