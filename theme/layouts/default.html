@@ -45,15 +45,15 @@
     
     {% if pages.current == 'home' %}
       {# Melhora LCP nos banners home #}
-      <link rel="preconnect" href="{{ banners.mobile.slides[0].image }}">
-      <link rel="preconnect" href="{{ banners.home.slides[0].image }}">
+      <link rel="preload" as="image" href="{{ banners.mobile.slides[0].image }}" />
+      <link rel="preload" as="image" href="{{ banners.home.slides[0].image }}" />
       <link rel="preload" as="style" href="{{ asset('css/home.css') }}">
       <link rel="stylesheet" href="{{ asset('css/home.css') }}" type="text/css">
     {% endif %} 
     
     {% if pages.current == 'product' %}
       {# Melhora LCP primeira foto do produto #}
-      <link rel="preconnect" href="{{ product.images[0].full }}">
+      <link rel="preload" as="image" href="{{ product.images[0].full }}" />
       <link rel="stylesheet" href="{{ asset('css/product.css') }}" type="text/css">
     {% endif %}
 
@@ -78,7 +78,6 @@
     {% if pages.current == 'register' %}
        <link rel="stylesheet" href="{{ asset('css/cadastro.css')}}">
     {% endif %}
-
          
    <!-- Css assíncrono -->
    <link rel="stylesheet" href="{{ asset('css/footer.css') }}" media="print" onload="this.media='all'">
