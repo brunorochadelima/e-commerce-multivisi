@@ -3,6 +3,7 @@
 <div class="swiper banner-home">
   <div class="swiper-wrapper">
     {% for slide in banners.mobile.slides %}
+    {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %}
     <div class="swiper-slide">
       <a href="{{ slide.link }}" target="{{ slide.target }}">
         <img
@@ -11,6 +12,7 @@
           alt="{{ slide.label }}"
           width="{{ slide.width }}"
           height="{{ slide.height }}"
+          loading="{{ lazyIndex }}"
         >
         <div class="swiper-lazy-preloader"></div>
       </a>
@@ -27,6 +29,7 @@
 <div class="swiper banner-home">
   <div class="swiper-wrapper">
     {% for slide in banners.home.slides %}
+    {% set lazyIndex = loop.index == 1 ? "eager" : "lazy" %}
     <div class="swiper-slide">
       <a href="{{ slide.link }}" target="{{ slide.target }}">
         <img
@@ -35,6 +38,7 @@
           alt="{{ slide.label }}"
           width="{{ slide.width }}"
           height="{{ slide.height }}"
+          loading="{{ lazyIndex }}"
         >
         <div class="swiper-lazy-preloader"></div>
       </a>
