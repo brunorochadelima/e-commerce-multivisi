@@ -5,7 +5,7 @@
 <section class="container">
   {% set destaques = Products({ 
     'filter': 'featured', 
-    'limit': 4, 
+    'limit': 5, 
     'order': {
       'quantity_sold': 'desc'},
   }) %}
@@ -16,12 +16,12 @@
 <section class="container">
   {% set novidades = Products({ 
     'filter': 'new', 
-    'limit': 4, 
+    'limit': 5, 
     'order': {
       'price': 'desc'}, 
   }) %}
   {% element 'snippets/product-list'
-  {'products': novidades, 'icon': 'bi bi-star', 'titleCategory': 'Acabaram de chegar', 'link' :
+  {'products': novidades, 'icon': 'bi bi-star', 'titleCategory': 'Novidades', 'link' :
   links.search_order_new} %}
 </section>
 
@@ -41,7 +41,7 @@
 <section class="container">
   {% set promocoes = Products({ 
     'filter': 'promotion', 
-    'limit': 4, 
+    'limit': 5, 
     'order': {
       'quantity_sold': 'desc',
       'price_offer': 'desc'}, 
