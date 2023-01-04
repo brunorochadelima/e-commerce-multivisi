@@ -9,7 +9,7 @@
     'order': {
       'quantity_sold': 'desc'},
   }) %}
-  {% element 'snippets/product-list' {'products': destaques, 'titleCategory': 'Os mais queridos', 'link' :
+  {% element 'snippets/product-list' {'products': destaques, 'icon': 'bi bi-heart', 'titleCategory': 'Os mais queridos', 'link' :
   links.search_featured } %}
 </section>
 
@@ -21,7 +21,7 @@
       'price': 'desc'}, 
   }) %}
   {% element 'snippets/product-list'
-  {'products': novidades, 'titleCategory': 'Acabaram de chegar', 'link' :
+  {'products': novidades, 'icon': 'bi bi-star', 'titleCategory': 'Acabaram de chegar', 'link' :
   links.search_order_new} %}
 </section>
 
@@ -47,7 +47,7 @@
       'price_offer': 'desc'}, 
   }) %}
   {% element 'snippets/product-list'
-  {'products': promocoes, 'titleCategory': 'Multi Ofertas', 'link' :
+  {'products': promocoes, 'icon': 'bi bi-lightning-charge', 'titleCategory': 'Multi Ofertas', 'link' :
   links.search_offer } %}
 </section>
 
