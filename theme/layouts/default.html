@@ -44,14 +44,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" integrity="sha512-okkLcBJE+U19Dpd0QdHA1wn4YY6rW3CwaxeLJT3Jmj9ZcNSbln/VYw8UdqXRIwLX7J8PmtHs0I/FPAhozFvXKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     {# Melhora LCP nos banners home #}      
-    {% if pages.current == 'home' and utils.is_mobile %}
-      <link rel="preload" as="image" href="{{ banners.mobile.slides[0].image }}" />         
-    {% endif %} 
-    {% if pages.current == 'home' and not utils.is_mobile %}
-      <link rel="preload" as="image" href="{{ banners.home.slides[0].image }}" />
-    {% endif %}
-
     {% if pages.current == 'home' %}
+      <link rel="preload" as="image" href="{{ banners.home.slides[0].image }}" />
+      <link rel="preload" as="image" href="{{ banners.mobile.slides[0].image }}" />         
       <link rel="preload" as="style" href="{{ asset('css/home.css') }}">
       <link rel="stylesheet" href="{{ asset('css/home.css') }}" type="text/css">
     {% endif %}
