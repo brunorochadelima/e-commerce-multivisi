@@ -89,8 +89,7 @@ a {
   color: $bluePrimary;
   .categories_destaques a {
     color: $bluePrimary;
-  }
-}
+  }  
 
 .navbar {
   position: relative;
@@ -99,7 +98,8 @@ a {
   align-items: center;
 
   ul.categories_destaques {
-    display: flex;    
+    display: flex;
+    gap: 10px;    
     margin: 0;
     list-style: none;
 
@@ -133,4 +133,4 @@ a {
   top: 0; right: 0; bottom: 0; left: 0;
   background: rgba(#000, .3);
   z-index: 2;
-}
+}}

@@ -76,7 +76,6 @@ window.onclick = function (event) {
 };
 
 // Alterna entre as abas de navegação do modal de formas de pagamento
-
 const pixTitle = document.querySelector(".pix-title");
 const pixItem = document.querySelector("#pix");
 

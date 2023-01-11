@@ -90,7 +90,6 @@ var swiper5 = new Swiper(".showroomSlider", {
   keyboard: true,
 });
 
-
 // Aviso Cookies
 
 const cookie = get_cookie("banner_aviso_cookies");
