@@ -106,7 +106,7 @@ a {
     li {
       font-weight: bold;
       a {
-        padding: 1rem;
+        padding: .5rem;
         &:hover {
           background: #00e5ff;
           border-radius: 5px;
@@ -117,7 +117,7 @@ a {
   }
 
   .open_menu_categories {
-    padding: 1rem;
+    padding: .5rem;
   }
 
   .open_menu_categories:hover + .menu_categories,
