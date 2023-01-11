@@ -1,6 +1,8 @@
 <aside class="filter">
     <form class="filter__form" method="get">
-        <p class="filter__form__title"><i class="bi bi-filter-right"></i> Filtrar Por:</p>
+        <p class="filter__form__title">
+            <i class="bi bi-filter-right"></i>
+            Filtrar Por:</p>
         <input type="hidden" name="loja" value="{{ store.id }}"/>
         {% if search.word %}
             <input name="palavra_busca" type="hidden" value="{{ search.word }}"/>
@@ -10,62 +12,62 @@
             <input type="hidden" name="categoria" value="{{ category.id }}"/>
         {% endif %}
 
-       {# Filtro Por categoria #}
-       {% if filters.categories %}
-        <section class="filter__block">
-            <h4 class="filter__title">Categorias</h4>
-            <ul class="filter__list">
-                {% for category in filters.categories.items %}
-                    {% set category_applied = category.title in filtered_options.categories ? true : false %}
-                    <li>
-                        <input id="{{ category.title }}" type="checkbox" name="categories[]" value="{{ category.title|convert_encoding('UTF-8', 'ISO-8859-1') }}" {{ category_applied ? 'checked' }} onchange="this.form.submit()">
-                        <label for="{{ category.title }}">
-                            <span>{{ category.title }}</span>
-                            <span class="filter__text--count">({{ category.count }})</span>
-                        </label>
-                    </li>                
-                {% endfor %}
-            </ul>
-        </section>
+        {# Filtro Por categoria #}
+        {% if filters.categories %}
+            <section class="filter__block">
+                <h4 class="filter__title">Categorias</h4>
+                <ul class="filter__list">
+                    {% for category in filters.categories.items %}
+                        {% set category_applied = category.title in filtered_options.categories ? true : false %}
+                        <li>
+                            <input id="{{ category.title }}" type="checkbox" name="categories[]" value="{{ category.title|convert_encoding('UTF-8', 'ISO-8859-1') }}" {{ category_applied ? 'checked' }} onchange="this.form.submit()">
+                            <label for="{{ category.title }}">
+                                <span>{{ category.title }}</span>
+                                <span class="filter__text--count">({{ category.count }})</span>
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
         {% endif %}
 
         {# Filtro Marcas #}
         {% if filters.brands %}
-        <section class="filter__block">
-            <h4 class="filter__title">Marcas</h4>
-            <ul class="filter__list">
-                {% for brand in filters.brands.items %}
-                    {% set brand_applied = brand.title in filtered_options.brand ? true : false %}
-                    <li>
-                        <input id="{{ brand.title }}" type="checkbox" name="brands[]" value="{{ brand.title|convert_encoding('UTF-8', 'ISO-8859-1') }}" {{ brand_applied ? 'checked' }} onchange="this.form.submit()">
-                        <label for="{{ brand.title }}">
-                            <span>{{ brand.title }}</span>
-                            <span class="filter__text--count">({{ brand.count }})</span>
-                        </label>
-                    </li>                
-                {% endfor %}
-            </ul>
-        </section>
+            <section class="filter__block">
+                <h4 class="filter__title">Marcas</h4>
+                <ul class="filter__list">
+                    {% for brand in filters.brands.items %}
+                        {% set brand_applied = brand.title in filtered_options.brand ? true : false %}
+                        <li>
+                            <input id="{{ brand.title }}" type="checkbox" name="brands[]" value="{{ brand.title|convert_encoding('UTF-8', 'ISO-8859-1') }}" {{ brand_applied ? 'checked' }} onchange="this.form.submit()">
+                            <label for="{{ brand.title }}">
+                                <span>{{ brand.title }}</span>
+                                <span class="filter__text--count">({{ brand.count }})</span>
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
         {% endif %}
 
         {# Filtro Faixa de preços #}
         {% if filters.prices %}
-        <section class="filter__block">
-            <h4 class="filter__title">Faixa de Preços</h4>
-            <ul class="filter__list">
-                {% for price in filters.prices.items %}
-                    {% set price_applied = price.from and price.to in filtered_options.prices ? true : false %}
-                    <li>
-                        <input id="{{ price.from }}-{{ price.to }}" type="checkbox" name="prices[]" value="{{ price.from }},{{ price.to }}" {{ price_applied ? 'checked' }} onchange="this.form.submit()">
-                        <label for="{{ price.from }}-{{ price.to }}">
-                            <span>{{ price.title }}</span>
-                        </label>
-                    </li>                
-                {% endfor %}
-            </ul>
-        </section>
+            <section class="filter__block">
+                <h4 class="filter__title">Faixa de Preços</h4>
+                <ul class="filter__list">
+                    {% for price in filters.prices.items %}
+                        {% set price_applied = price.from and price.to in filtered_options.prices ? true : false %}
+                        <li>
+                            <input id="{{ price.from }}-{{ price.to }}" type="checkbox" name="prices[]" value="{{ price.from }},{{ price.to }}" {{ price_applied ? 'checked' }} onchange="this.form.submit()">
+                            <label for="{{ price.from }}-{{ price.to }}">
+                                <span>{{ price.title }}</span>
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
         {% endif %}
 
-       {# <button type="submit" class="filter__button">{{ Translation('filtrar') }}</button> #}
+        {# <button type="submit" class="filter__button">{{ Translation('filtrar') }}</button> #}
     </form>
 </aside>
