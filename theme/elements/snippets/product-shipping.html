@@ -1,11 +1,11 @@
 {% if product.stock > 0 %}
   <div id="product-shipping" data-productId="{{ product.id }}">
     <p>Consultar prazo e valor do frete:</p>
-    <form onsubmit="event.preventDefault(); calcularFrete();">
+    <form onsubmit="event.preventDefault(); calcularFrete();" name= "formCalculaFrete">
       <label for="cep1" class="shipping-label">CEP </label>
-      <input class="shipping-input" id="cep1" name="frete" placeholder="00000" type="text" minlength="5" maxlength="5" placeholder="Informe seu CEP" required/>
+      <input class="shipping-input" id="cep1" name="cep1" placeholder="00000" type="text" minlength="5" maxlength="5" placeholder="Informe seu CEP" required/>
       -
-      <input class="shipping-input2" id="cep2" name="calcule o frete" placeholder="000" type="text" minlength="3" maxlength="3" placeholder="Informe seu CEP" required/>
+      <input class="shipping-input2" id="cep2" name="cep2" placeholder="000" type="text" minlength="3" maxlength="3" placeholder="Informe seu CEP" required/>
       <button type="submit" class="btn-calcular">
         Ok
       </button>

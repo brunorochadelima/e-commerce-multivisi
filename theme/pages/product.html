@@ -85,7 +85,7 @@
 
       <p class="product__modal-payment">Ver mais formas de pagamento</p>
 
-      <form action="{{ links.cart_add ~ product.id }}" method="POST">
+      <form action="{{ links.cart_add ~ product.id }}" method="POST" name="cartAdd">
         {% if product.variants %}
           <input type="hidden" id="variant" name="variacao" value=""/>
           <p class="product__variant_title">
