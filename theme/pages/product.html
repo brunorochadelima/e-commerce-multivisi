@@ -9,7 +9,7 @@
 <section class="container">
   <div class="product_container">
     {# Slider fotos e vídeo do produto #}
-    <div>
+    <div>   
       <div class="swiper productSlider">
         <div class="swiper-wrapper">
           {% if product.video %}
@@ -58,6 +58,9 @@
       {% endif %}
 
       <h1 class="product__name">{{ product.name }}</h1>
+
+      <span class="{{product.featured ? 'product__tag' }}">{{ product.featured ? 'Destaque' }}</span> 
+      <span class="{{product.new ? 'product__tag' }}">{{ product.new ? 'Novidade' }}</span>
 
       <p class="product__brand">
         {{ "Marca: " ~ product.brand ~ " - Cod: " ~ product.id ~ " | " }}
@@ -127,7 +130,7 @@
       {% endif %}
       <hr/>
 
-     {% element ('snippets/product-shipping') %}
+     {% element ('snippets/product-shipping') %}      
     </div>
 
   </div>

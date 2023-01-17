@@ -64,6 +64,15 @@
     }
   }
 
+  &__tag {
+    background: #EEEEEE;
+    font-size: 14px;
+    padding: 4px 15px;
+    border-radius: 5px;
+    margin-inline-end: 10px;
+    color: $dark900;
+  }
+
   [data-availability="Imediata"],
   [data-availability="PRONTA ENTREGA"] {
     color: $green;
