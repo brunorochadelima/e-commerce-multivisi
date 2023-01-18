@@ -84,6 +84,7 @@
     {{ tray.analytics }}    
     {{ googleTagManager.header(pages.current, tagManagerData) }}
     {% endspaceless %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha512-21jyjW5+RJGAZ563i/Ug7e0AUkY7QiZ53LA4DWE5eNu5hvjW6KUf9LqquJ/ziLKWhecyvvojG7StycLj7bT39Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
 
   <body>    
@@ -134,6 +135,10 @@
     })
    }}
    {{ store.chat }}
+   <script>
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
+   </script>
    <script src="https://integrazap.com.br/gadget-v.1/wapp-flutuante.js?x=04326a705a81220e2d8795fa87a7576d&y=214160155440&z=multivisi.com.br" defer></script>
   </body>
 </html>
