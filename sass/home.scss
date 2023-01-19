@@ -23,7 +23,8 @@
 
 // Carrosel de categorias
 .categories-bar {
-  margin: 2rem 0;
+  margin: 1rem 0;
+  padding: 1rem 0;
 }
 
 .figure-category {
@@ -34,8 +35,12 @@
   }
 
   & img:hover {
-    filter: drop-shadow(rgba(149, 157, 165, 0.2) 0px 8px 24px);
+    filter: drop-shadow(rgba(0, 60, 229, 0.3) 0px 0px 10px);
   }
+}
+
+.figure-category img:hover + figcaption {
+  color: $bluePrimary;
 }
 
 @media only screen and (max-width: 600px) {
