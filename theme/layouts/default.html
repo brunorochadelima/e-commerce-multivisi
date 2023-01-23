@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-  lang="{{ tray.lang == 'pt' ? 'pt-BR' : tray.lang }}"
+  lang="pt-br"
   data-theme-name="{{ settings.theme_name }}"
   data-theme-version="{{ settings.theme_version }}"
   data-files="{{ utils.assets_version }}"
@@ -8,11 +8,11 @@
   class="page-{{ pages.current }}"
 >
   <head>
-    {% spaceless %} 
     <!-- tray charset -->
     {{ html.charset() }}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
     <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous">
 
     <!-- tray meta tags -->
     {{ tray.meta }}
@@ -21,15 +21,14 @@
     {{ tray.styles }} 
    
     <!-- Reset -->
-    <style>
-    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" >
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- Header -->
     {% if utils.is_mobile %}
       <link rel="preload" as="style" href="{{ asset('css/header-mobile.css')}}">
       <link rel="stylesheet" href="{{ asset('css/header-mobile.css')}}">
@@ -38,9 +37,11 @@
       <link rel="stylesheet" href="{{ asset('css/header.css')}}">
     {% endif %}
 
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous">
+    <!-- Slides -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" as="style" integrity="sha512-okkLcBJE+U19Dpd0QdHA1wn4YY6rW3CwaxeLJT3Jmj9ZcNSbln/VYw8UdqXRIwLX7J8PmtHs0I/FPAhozFvXKg==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" integrity="sha512-okkLcBJE+U19Dpd0QdHA1wn4YY6rW3CwaxeLJT3Jmj9ZcNSbln/VYw8UdqXRIwLX7J8PmtHs0I/FPAhozFvXKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     {# Melhora LCP nos banners home #}      
     {% if pages.current == 'home' %}
@@ -50,17 +51,15 @@
       <link rel="stylesheet" href="{{ asset('css/home.css') }}" type="text/css">
     {% endif %}
     
+    {# Melhora LCP primeira foto do produto #}
     {% if pages.current == 'product' %}
-      {# Melhora LCP primeira foto do produto #}
       <link rel="preload" as="image" href="{{ product.images[0].full }}" />
       <link rel="stylesheet" href="{{ asset('css/product.css') }}" type="text/css">
     {% endif %}
 
     {% if pages.current in ['search', 'catalog'] %}
       <link rel="stylesheet" href="{{ asset('css/search.css') }}" type="text/css">
-    {% endif %}     
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% endif %}  
 
     {% if pages.current == 'showroom' %}
       <link rel="stylesheet" href="{{ asset('css/showroom.css')}}">
@@ -83,29 +82,26 @@
  
     {{ tray.analytics }}    
     {{ googleTagManager.header(pages.current, tagManagerData) }}
-    {% endspaceless %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha512-21jyjW5+RJGAZ563i/Ug7e0AUkY7QiZ53LA4DWE5eNu5hvjW6KUf9LqquJ/ziLKWhecyvvojG7StycLj7bT39Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
 
   <body>    
     {% spaceless %} 
-    {% element 'snippets/messages' %} 
-    {{ googleTagManager.top(pages.current, tagManagerData) }}    
+        {% element 'snippets/messages' %} 
+        {{ googleTagManager.top(pages.current, tagManagerData) }}    
 
-    {% element 'header' %} 
-    <main> 
-      {{ content_for_layout }}
-      {% if pages.current in ['showroom', 'politica-de-cookies', 'quem-somos', 'contact', 'ajuda' ] %}      
-        {% element pages.current %}
-      {% endif %}
-    </main>   
-    {% element 'footer' %}
+        {% element 'header' %} 
+        <main> 
+          {{ content_for_layout }}
+          {% if pages.current in ['showroom', 'politica-de-cookies', 'quem-somos', 'contact', 'ajuda' ] %}      
+            {% element pages.current %}
+          {% endif %}
+        </main>   
+        {% element 'footer' %}
+    {% endspaceless %}
 
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js" integrity="sha512-wdUM0BxMyMC/Yem1RWDiIiXA6ssXMoxypihVEwxDc+ftznGeRu4s9Fmxl8PthpxOh5CQ0eqjqw1Q8ScgNA1moQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- Rd Station -->
-    <script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/7afc2a8f-0433-42f5-b6a4-0ff4a44cc6a1-loader.js" defer></script>
 
     <!-- Página produto -->
     {% if pages.current == 'product' %}
@@ -123,22 +119,26 @@
 
     <script src="{{ asset('js/theme.min.js')}}" async></script>
     
-    {% endspaceless %}
     <!-- default tray -->
     {% element 'snippets/modal' %}  
     {{ tray.scripts }}
     {% element 'snippets/pageview' %} 
     {{ googleTagManager.bottom(pages.current, tagManagerData) }} 
-
-   {{ html.script({
-    '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
-    })
-   }}
+    {{ html.script({
+      '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
+      })
+    }}
    {{ store.chat }}
+
+   <!-- lib lazy load -->
    <script>
     const observer = lozad(); // lazy loads elements with default selector as '.lozad'
     observer.observe();
    </script>
-   <script src="https://integrazap.com.br/gadget-v.1/wapp-flutuante.js?x=04326a705a81220e2d8795fa87a7576d&y=214160155440&z=multivisi.com.br" defer></script>
+
+    <!-- Rd Station -->
+    <script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/7afc2a8f-0433-42f5-b6a4-0ff4a44cc6a1-loader.js" defer></script>
+    <!-- Integra zap -->
+    <script src="https://integrazap.com.br/gadget-v.1/wapp-flutuante.js?x=04326a705a81220e2d8795fa87a7576d&y=214160155440&z=multivisi.com.br" defer></script>
   </body>
 </html>

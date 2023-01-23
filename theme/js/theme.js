@@ -1,13 +1,13 @@
 // Sliders
-
 var swiper1 = new Swiper(".banner-home", {
-  effect: "slide",
   preloadImages: false,
+  effect: "slide",
+  loop: true,
   lazy: {
     loadPrevNext: true,
   },
   autoplay: {
-    delay: 2500,
+    delay: 3500,
     disableOnInteraction: false,
   },
   navigation: {
@@ -22,6 +22,7 @@ var swiper1 = new Swiper(".banner-home", {
 });
 
 var swiper2 = new Swiper(".categories-bar", {
+  lazy: true,
   slidesPerView: 3,
   spaceBetween: 20,
   slidesPerGroup: 3,
