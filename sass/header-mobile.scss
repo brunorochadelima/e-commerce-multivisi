@@ -15,11 +15,12 @@
 
   &__cart {
     position: relative;
+    padding: 10px;
 
     span {
       position: absolute;
-      right: -10px;
-      bottom: 15px;
+      right: 0;
+      top: 5px;
       background: $blueSecondary;
       width: 18px;
       height: 18px;
