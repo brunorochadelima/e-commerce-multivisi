@@ -43,12 +43,16 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    {# Melhora LCP nos banners home #}      
     {% if pages.current == 'home' %}
-      <link rel="preload" as="image" href="{{ banners.mobile.slides[0].image }}" />         
-      <link rel="preload" as="image" href="{{ banners.home.slides[0].image }}" />
       <link rel="preload" as="style" href="{{ asset('css/home.css') }}">
       <link rel="stylesheet" href="{{ asset('css/home.css') }}" type="text/css">
+    {% endif %}
+
+    {# Melhora LCP nos banners home #}      
+    {% if pages.current == 'home' and utils.is_mobile %}
+      <link rel="preload" as="image" href="{{ banners.mobile.slides[0].image }}" />  
+      {% elseif pages.current == 'home' %}  
+      <link rel="preload" as="image" href="{{ banners.home.slides[0].image }}" />
     {% endif %}
     
     {# Melhora LCP primeira foto do produto #}
