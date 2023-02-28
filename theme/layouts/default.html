@@ -132,17 +132,12 @@
       '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
       })
     }}
-   {{ store.chat }}
-
    <!-- lib lazy load -->
    <script>
     const observer = lozad(); // lazy loads elements with default selector as '.lozad'
     observer.observe();
    </script>
 
-    <!-- Rd Station -->
-    <script src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/7afc2a8f-0433-42f5-b6a4-0ff4a44cc6a1-loader.js" defer></script>
-    <!-- Integra zap -->
-    <script src="https://integrazap.com.br/gadget-v.1/wapp-flutuante.js?x=04326a705a81220e2d8795fa87a7576d&y=214160155440&z=multivisi.com.br" defer></script>
+   {{ store.chat }}
   </body>
 </html>
