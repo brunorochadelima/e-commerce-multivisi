@@ -53,19 +53,20 @@
 // variação de produto
 
 .product {
-  color: $dark900;
+  color: $dark600;
   padding: 0.8rem;
   margin-bottom: 1rem;
 
   &__name {
     font-size: 2rem;
+    color: $dark900;
     @media screen and (max-width: 768px) {
       font-size: 1.5rem;
     }
   }
 
   &__tag {
-    background: #EEEEEE;
+    background: #eeeeee;
     font-size: 14px;
     padding: 4px 15px;
     border-radius: 5px;
@@ -92,9 +93,8 @@
   }
 
   &__price {
-    color: $dark900;
     font-weight: normal;
-    margin-top: 0;    
+    margin-top: 0;
 
     span {
       font-size: 2rem;
@@ -167,7 +167,7 @@
     }
 
     &:hover {
-      background: #0F66FF;
+      background: #0f66ff;
     }
   }
 }
@@ -217,7 +217,7 @@ input.shipping-input2 {
   }
   font-family: "Montserrat", sans-serif !important;
 
-  color: $dark900;
+  color: $dark600;
   background-color: #ffffff;
   border-radius: 15px;
   padding: 1rem 2rem;
@@ -228,11 +228,11 @@ input.shipping-input2 {
   }
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    margin: 1rem 0;
-    color: $bluePrimary;
-    text-transform: uppercase;
+    margin: 2rem 0;
+    color: $dark900;
+    text-transform: uppercase;    
   }
 
   // Tabelas ficha ténica
@@ -253,11 +253,12 @@ input.shipping-input2 {
 
 .related_products {
   margin-bottom: 3rem;
+
   &__title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: $bluePrimary;
+    color: $dark900;
     margin: 1.5rem 0;
   }
 
