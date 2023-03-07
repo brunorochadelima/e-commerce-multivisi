@@ -38,7 +38,6 @@
 .header-mobile-drawer {
   padding: 0 0.8rem;
   display: block;
-  // position: absolute;
   position: fixed;
   top: 0;
   // width usado para animação começando em 0 e termina em 100%
@@ -47,7 +46,7 @@
   z-index: 99;
   visibility: hidden;
   overflow-x: hidden;
-  transition: 0.1s ease-in;
+  transition: 150ms ease;
   background: #f1f1f1;
   color: $dark900;
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
@@ -98,17 +97,20 @@
   }
 
   .title-categories {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: normal;
-    margin: 1rem 0;    
+    margin: 1rem 0;
   }
 
-  .lojas {
+  .navigator_item {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 5px;
     margin-top: 1rem;
     color: $dark900;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
   }
 }
 
