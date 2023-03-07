@@ -31,11 +31,13 @@
 
 .product_container {
   display: flex;
+  flex-direction: column;
   background: #ffffff;
   border-radius: 15px;
+  gap: 0.5rem;
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
   }
 }
 
@@ -58,10 +60,10 @@
   margin-bottom: 1rem;
 
   &__name {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: $dark900;
-    @media screen and (max-width: 768px) {
-      font-size: 1.5rem;
+    @media screen and (min-width: 768px) {
+      font-size: 1.8rem;
     }
   }
 
@@ -177,7 +179,7 @@
 .shipping-result {
   margin: 0.8rem 0;
   font-size: 1rem;
-  color: #2c3e50;
+  color: $dark600;
 
   table tbody tr th {
     background: none;
@@ -212,14 +214,25 @@ input.shipping-input2 {
 // Descrição do produto
 
 .product_description {
-  span {
-    font-family: "Montserrat", sans-serif !important;
+  &__title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 2rem 0;
+    color: $dark900;
+    text-transform: uppercase;
   }
-  font-family: "Montserrat", sans-serif !important;
 
-  color: $dark600;
+  // textos da descrição
+  font-family: "Montserrat", sans-serif !important;
+  span,
+  font {
+    font-family: inherit;
+    color: inherit;
+  }
+
+  color: $dark600 !important;
   background-color: #ffffff;
-  border-radius: 15px;
+  border-radius: 1rem;
   padding: 1rem 2rem;
   margin: 1rem 0;
 
@@ -227,17 +240,13 @@ input.shipping-input2 {
     padding: 1rem 0.5rem;
   }
 
-  &__title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin: 2rem 0;
-    color: $dark900;
-    text-transform: uppercase;    
+  // Tabelas ficha ténica
+  table {
+    max-width: 100% !important;
   }
 
-  // Tabelas ficha ténica
   table tbody tr > td {
-    padding: 0.5rem;
+    padding: 0.6rem;
     width: 50vh;
   }
 
