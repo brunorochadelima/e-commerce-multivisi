@@ -150,16 +150,12 @@
   }
 
   &__buy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
     width: 300px;
     background-color: $bluePrimary;
     color: #fff;
     border: none;
-    padding: 1.2rem 0;
-    border-radius: 12px;
+    padding: 1.5rem 0;
+    border-radius: 16px;
     margin: 0.5rem 0;
     text-transform: uppercase;
     font-weight: bold;
